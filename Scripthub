@@ -1,0 +1,2092 @@
+
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+ScreenGui0 = Instance.new("ScreenGui")
+ImageLabel1 = Instance.new("ImageLabel")
+LocalScript2 = Instance.new("LocalScript")
+ImageLabel3 = Instance.new("ImageLabel")
+TextLabel4 = Instance.new("TextLabel")
+TextLabel5 = Instance.new("TextLabel")
+TextButton6 = Instance.new("TextButton")
+ImageLabel7 = Instance.new("ImageLabel")
+LocalScript8 = Instance.new("LocalScript")
+TextLabel9 = Instance.new("TextLabel")
+TextButton10 = Instance.new("TextButton")
+ImageLabel11 = Instance.new("ImageLabel")
+LocalScript12 = Instance.new("LocalScript")
+TextLabel13 = Instance.new("TextLabel")
+TextButton14 = Instance.new("TextButton")
+ImageLabel15 = Instance.new("ImageLabel")
+LocalScript16 = Instance.new("LocalScript")
+TextLabel17 = Instance.new("TextLabel")
+TextButton18 = Instance.new("TextButton")
+ImageLabel19 = Instance.new("ImageLabel")
+LocalScript20 = Instance.new("LocalScript")
+TextButton21 = Instance.new("TextButton")
+ImageLabel22 = Instance.new("ImageLabel")
+LocalScript23 = Instance.new("LocalScript")
+TextLabel24 = Instance.new("TextLabel")
+TextLabel25 = Instance.new("TextLabel")
+TextButton26 = Instance.new("TextButton")
+ImageLabel27 = Instance.new("ImageLabel")
+LocalScript28 = Instance.new("LocalScript")
+TextLabel29 = Instance.new("TextLabel")
+TextButton30 = Instance.new("TextButton")
+ImageLabel31 = Instance.new("ImageLabel")
+LocalScript32 = Instance.new("LocalScript")
+TextLabel33 = Instance.new("TextLabel")
+TextButton34 = Instance.new("TextButton")
+ImageLabel35 = Instance.new("ImageLabel")
+LocalScript36 = Instance.new("LocalScript")
+TextLabel37 = Instance.new("TextLabel")
+TextButton38 = Instance.new("TextButton")
+ImageLabel39 = Instance.new("ImageLabel")
+LocalScript40 = Instance.new("LocalScript")
+TextLabel41 = Instance.new("TextLabel")
+TextButton42 = Instance.new("TextButton")
+ImageLabel43 = Instance.new("ImageLabel")
+LocalScript44 = Instance.new("LocalScript")
+TextLabel45 = Instance.new("TextLabel")
+TextButton46 = Instance.new("TextButton")
+ImageLabel47 = Instance.new("ImageLabel")
+LocalScript48 = Instance.new("LocalScript")
+TextLabel49 = Instance.new("TextLabel")
+TextButton50 = Instance.new("TextButton")
+ImageLabel51 = Instance.new("ImageLabel")
+ImageLabel52 = Instance.new("ImageLabel")
+ImageLabel53 = Instance.new("ImageLabel")
+ScreenGui0.Parent = mas
+ImageLabel1.Name = "Frame"
+ImageLabel1.Parent = ScreenGui0
+ImageLabel1.Position = UDim2.new(0.248930112, 0, 0.112883434, 0)
+ImageLabel1.Size = UDim2.new(0, 407, 0, 301)
+ImageLabel1.BackgroundColor = BrickColor.new("Really black")
+ImageLabel1.BackgroundColor3 = Color3.new(0, 0, 0)
+ImageLabel1.BackgroundTransparency = 1
+ImageLabel1.Image = "rbxassetid://3570695787"
+ImageLabel1.ImageColor3 = Color3.new(0, 0, 0)
+ImageLabel1.ScaleType = Enum.ScaleType.Slice
+ImageLabel1.SliceCenter = 100, 100, 100, 100
+table.insert(cors,sandbox(LocalScript2,function()
+local UserInputService = game:GetService("UserInputService")
+
+local gui = script.Parent
+
+local dragging
+local dragInput
+local dragStart
+local startPos
+
+local function update(input)
+	local delta = input.Position - dragStart
+	gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+
+gui.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		dragging = true
+		dragStart = input.Position
+		startPos = gui.Position
+		
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragging = false
+			end
+		end)
+	end
+end)
+
+gui.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		dragInput = input
+	end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+	if input == dragInput and dragging then
+		if gui.Visible then
+			update(input)
+		end
+	end
+end)
+end))
+ImageLabel3.Name = "Frame"
+ImageLabel3.Parent = ImageLabel1
+ImageLabel3.Position = UDim2.new(-0.00112862547, 0, -0.00423369557, 0)
+ImageLabel3.Size = UDim2.new(0, 407, 0, 29)
+ImageLabel3.BackgroundColor = BrickColor.new("Really black")
+ImageLabel3.BackgroundColor3 = Color3.new(0, 0, 0)
+ImageLabel3.BackgroundTransparency = 1
+ImageLabel3.Image = "rbxassetid://3570695787"
+ImageLabel3.ImageColor3 = Color3.new(0.490196, 0.490196, 0.490196)
+ImageLabel3.ScaleType = Enum.ScaleType.Slice
+ImageLabel3.SliceCenter = 100, 100, 100, 100
+TextLabel4.Parent = ImageLabel1
+TextLabel4.Position = UDim2.new(-0.0294840299, 0, 0, 0)
+TextLabel4.Size = UDim2.new(0, 155, 0, 28)
+TextLabel4.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel4.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel4.BackgroundTransparency = 1
+TextLabel4.Font = Enum.Font.Ubuntu
+TextLabel4.FontSize = Enum.FontSize.Size24
+TextLabel4.Text = "IfindsHub"
+TextLabel4.TextColor = BrickColor.new("Really black")
+TextLabel4.TextColor3 = Color3.new(0, 0, 0)
+TextLabel4.TextSize = 20
+TextLabel5.Parent = ImageLabel1
+TextLabel5.Position = UDim2.new(0.616707623, 0, 0, 0)
+TextLabel5.Size = UDim2.new(0, 155, 0, 28)
+TextLabel5.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel5.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel5.BackgroundTransparency = 1
+TextLabel5.Font = Enum.Font.Ubuntu
+TextLabel5.FontSize = Enum.FontSize.Size24
+TextLabel5.Text = "Made by ?A#8248"
+TextLabel5.TextColor = BrickColor.new("Really black")
+TextLabel5.TextColor3 = Color3.new(0, 0, 0)
+TextLabel5.TextSize = 20
+TextButton6.Parent = ImageLabel1
+TextButton6.Position = UDim2.new(-0.0294840299, 0, 0.16693747, 0)
+TextButton6.Size = UDim2.new(0, 154, 0, 46)
+TextButton6.BackgroundColor = BrickColor.new("Institutional white")
+TextButton6.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton6.BackgroundTransparency = 1
+TextButton6.BorderSizePixel = 0
+TextButton6.Font = Enum.Font.SourceSans
+TextButton6.FontSize = Enum.FontSize.Size14
+TextButton6.Text = ""
+TextButton6.TextColor = BrickColor.new("Really black")
+TextButton6.TextColor3 = Color3.new(0, 0, 0)
+TextButton6.TextSize = 14
+ImageLabel7.Name = "TextButton_Roundify_12px"
+ImageLabel7.Parent = TextButton6
+ImageLabel7.Position = UDim2.new(0.496551722, 0, 0.5, 0)
+ImageLabel7.Size = UDim2.new(0.689655185, 0, 1, 0)
+ImageLabel7.Active = true
+ImageLabel7.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel7.BackgroundColor = BrickColor.new("Institutional white")
+ImageLabel7.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel7.BackgroundTransparency = 1
+ImageLabel7.Selectable = true
+ImageLabel7.Image = "rbxassetid://3570695787"
+ImageLabel7.ImageColor3 = Color3.new(0.301961, 0.301961, 0.301961)
+ImageLabel7.ScaleType = Enum.ScaleType.Slice
+ImageLabel7.SliceCenter = 100, 100, 100, 100
+table.insert(cors,sandbox(LocalScript8,function()
+script.Parent.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+end))
+TextLabel9.Parent = ImageLabel1
+TextLabel9.Position = UDim2.new(0.0279250834, 0, 0.207207203, 0)
+TextLabel9.Size = UDim2.new(0, 105, 0, 28)
+TextLabel9.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel9.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel9.BackgroundTransparency = 1
+TextLabel9.Font = Enum.Font.Ubuntu
+TextLabel9.FontSize = Enum.FontSize.Size24
+TextLabel9.Text = "Infinite Yield"
+TextLabel9.TextColor = BrickColor.new("Really black")
+TextLabel9.TextColor3 = Color3.new(0, 0, 0)
+TextLabel9.TextSize = 20
+TextButton10.Parent = ImageLabel1
+TextButton10.Position = UDim2.new(0.243243247, 0, 0.16693747, 0)
+TextButton10.Size = UDim2.new(0, 152, 0, 46)
+TextButton10.BackgroundColor = BrickColor.new("Institutional white")
+TextButton10.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton10.BackgroundTransparency = 1
+TextButton10.BorderSizePixel = 0
+TextButton10.Font = Enum.Font.SourceSans
+TextButton10.FontSize = Enum.FontSize.Size14
+TextButton10.Text = ""
+TextButton10.TextColor = BrickColor.new("Really black")
+TextButton10.TextColor3 = Color3.new(0, 0, 0)
+TextButton10.TextSize = 14
+ImageLabel11.Name = "TextButton_Roundify_12px"
+ImageLabel11.Parent = TextButton10
+ImageLabel11.Position = UDim2.new(0.496551722, 0, 0.5, 0)
+ImageLabel11.Size = UDim2.new(0.689655185, 0, 1, 0)
+ImageLabel11.Active = true
+ImageLabel11.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel11.BackgroundColor = BrickColor.new("Institutional white")
+ImageLabel11.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel11.BackgroundTransparency = 1
+ImageLabel11.Selectable = true
+ImageLabel11.Image = "rbxassetid://3570695787"
+ImageLabel11.ImageColor3 = Color3.new(0.301961, 0.301961, 0.301961)
+ImageLabel11.ScaleType = Enum.ScaleType.Slice
+ImageLabel11.SliceCenter = 100, 100, 100, 100
+table.insert(cors,sandbox(LocalScript12,function()
+script.Parent.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/Memeboiyot/SyntaxRebornOfficial/main/SyntaxReborn'),true))()
+end)
+end))
+TextLabel13.Parent = ImageLabel1
+TextLabel13.Position = UDim2.new(0.298195332, 0, 0.207207203, 0)
+TextLabel13.Size = UDim2.new(0, 105, 0, 28)
+TextLabel13.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel13.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel13.BackgroundTransparency = 1
+TextLabel13.Font = Enum.Font.Ubuntu
+TextLabel13.FontSize = Enum.FontSize.Size24
+TextLabel13.Text = "Syntax V2"
+TextLabel13.TextColor = BrickColor.new("Really black")
+TextLabel13.TextColor3 = Color3.new(0, 0, 0)
+TextLabel13.TextSize = 20
+TextButton14.Parent = ImageLabel1
+TextButton14.Position = UDim2.new(0.486486495, 0, 0.16693747, 0)
+TextButton14.Size = UDim2.new(0, 160, 0, 46)
+TextButton14.BackgroundColor = BrickColor.new("Institutional white")
+TextButton14.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton14.BackgroundTransparency = 1
+TextButton14.BorderSizePixel = 0
+TextButton14.Font = Enum.Font.SourceSans
+TextButton14.FontSize = Enum.FontSize.Size14
+TextButton14.Text = ""
+TextButton14.TextColor = BrickColor.new("Really black")
+TextButton14.TextColor3 = Color3.new(0, 0, 0)
+TextButton14.TextSize = 14
+ImageLabel15.Name = "TextButton_Roundify_12px"
+ImageLabel15.Parent = TextButton14
+ImageLabel15.Position = UDim2.new(0.530926883, 0, 0.5, 0)
+ImageLabel15.Size = UDim2.new(0.570905268, 0, 1, 0)
+ImageLabel15.Active = true
+ImageLabel15.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel15.BackgroundColor = BrickColor.new("Institutional white")
+ImageLabel15.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel15.BackgroundTransparency = 1
+ImageLabel15.Selectable = true
+ImageLabel15.Image = "rbxassetid://3570695787"
+ImageLabel15.ImageColor3 = Color3.new(0.301961, 0.301961, 0.301961)
+ImageLabel15.ScaleType = Enum.ScaleType.Slice
+ImageLabel15.SliceCenter = 100, 100, 100, 100
+table.insert(cors,sandbox(LocalScript16,function()
+script.Parent.MouseButton1Click:Connect(function()
+	print('Orhub loaded, made by Overlord#6666 and OrPlayz#0255 *https://discord.gg/QGThVHWzrM*')
+
+	local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+	local X = Material.Load({
+		Title = "OrHub",
+		Style = 3,
+		SizeX = 500,
+		SizeY = 350,
+		Theme = "Dark",
+		ColorOverrides = {
+			MainFrame = Color3.fromRGB(60,60,60)
+		}
+	})
+
+	local Main = X.New({
+		Title = "Main"
+	})
+
+	local Credits = X.New({
+		Title = "Credits"
+	})
+
+	local A = Main.Button({
+		Text = "Spinny Penis (NEW)",
+		Callback = function()
+			loadstring(game:HttpGet("https://pastebin.com/raw/UgVQ0DhY", true))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "nigggercummmeddd"
+				})
+			end
+		}
+	})
+
+	local A = Main.Button({
+		Text = "USC (Remade Edit)",
+		Callback = function()
+			loadstring(game:HttpGet("https://pastebin.com/raw/VSb0yyvy", true))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+
+	local A = Main.Button({
+		Text = "Hammer Smasher (Revamped)",
+		Callback = function()
+			loadstring(game:HttpGet("https://pastebin.com/raw/bgYZz7bY", true))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+
+	local A = Main.Button({
+		Text = "Levitating Sniper (NEW)",
+		Callback = function()
+			loadstring(game:HttpGet('https://pastebin.com/raw/cVq7CtyA'))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+
+
+
+
+	local A = Main.Button({
+		Text = "Chair Disabler (Revamped)",
+		Callback = function()
+			loadstring(game:HttpGet('https://pastebin.com/raw/p9vrca6r'))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+
+	local A = Main.Button({
+		Text = "Anti Fling (NEW)",
+		Callback = function()
+			loadstring(game:HttpGet('https://pastebin.com/raw/juQHG2mg'))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+	local A = Main.Button({
+		Text = "Net Bypass (April, 2022)",
+		Callback = function()
+			loadstring(game:HttpGet('https://paste.ee/r/vXN7L'))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+	local A = Main.Button({
+		Text = "Neptunian V (Torso Fling Edit)",
+		Callback = function()
+			loadstring(game:HttpGet('https://pastebin.com/raw/AMb014sw'))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+	local A = Main.Button({
+		Text = "Neptunian V Switcher (Revamped)",
+		Callback = function()
+			loadstring(game:HttpGet('https://pastebin.com/raw/aZdqTEJG'))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+	local A = Main.Button({
+		Text = "Leg Runner (R6)",
+		Callback = function()
+			loadstring(game:HttpGet('https://gist.githubusercontent.com/1BlueCat/7291747e9f093555573e027621f08d6e/raw/23b48f2463942befe19d81aa8a06e3222996242c/FE%2520Da%2520Feets'))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+
+
+
+
+
+
+
+
+
+
+	local A = Credits.Button({
+		Text = "Overlord#6666",
+		Callback = function()
+			setclipboard("Overlord#6666")
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+
+	local A = Credits.Button({
+		Text = "OrPlayz#0255",
+		Callback = function()
+			setclipboard("OrPlayz#0255")
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+
+	local A = Credits.Button({
+		Text = "OrHub Discord (Click To Copy)",
+		Callback = function()
+			setclipboard("https://discord.gg/QGThVHWzrM")
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+end)
+end))
+TextLabel17.Parent = ImageLabel1
+TextLabel17.Position = UDim2.new(0.566008568, 0, 0.207207203, 0)
+TextLabel17.Size = UDim2.new(0, 105, 0, 28)
+TextLabel17.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel17.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel17.BackgroundTransparency = 1
+TextLabel17.Font = Enum.Font.Ubuntu
+TextLabel17.FontSize = Enum.FontSize.Size24
+TextLabel17.Text = "Orhub"
+TextLabel17.TextColor = BrickColor.new("Really black")
+TextLabel17.TextColor3 = Color3.new(0, 0, 0)
+TextLabel17.TextSize = 20
+TextButton18.Parent = ImageLabel1
+TextButton18.Position = UDim2.new(-0.0737100765, 0, 0.374144673, 0)
+TextButton18.Size = UDim2.new(0, 183, 0, 48)
+TextButton18.BackgroundColor = BrickColor.new("Institutional white")
+TextButton18.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton18.BackgroundTransparency = 1
+TextButton18.BorderSizePixel = 0
+TextButton18.Font = Enum.Font.SourceSans
+TextButton18.FontSize = Enum.FontSize.Size14
+TextButton18.Text = ""
+TextButton18.TextColor = BrickColor.new("Really black")
+TextButton18.TextColor3 = Color3.new(0, 0, 0)
+TextButton18.TextSize = 14
+ImageLabel19.Name = "TextButton_Roundify_12px"
+ImageLabel19.Parent = TextButton18
+ImageLabel19.Position = UDim2.new(0.530926883, 0, 0.5, 0)
+ImageLabel19.Size = UDim2.new(0.570905268, 0, 1, 0)
+ImageLabel19.Active = true
+ImageLabel19.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel19.BackgroundColor = BrickColor.new("Institutional white")
+ImageLabel19.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel19.BackgroundTransparency = 1
+ImageLabel19.Selectable = true
+ImageLabel19.Image = "rbxassetid://3570695787"
+ImageLabel19.ImageColor3 = Color3.new(0.301961, 0.301961, 0.301961)
+ImageLabel19.ScaleType = Enum.ScaleType.Slice
+ImageLabel19.SliceCenter = 100, 100, 100, 100
+table.insert(cors,sandbox(LocalScript20,function()
+script.Parent.MouseButton1Click:Connect(function()
+	print('Orhub loaded, made by Overlord#6666 and OrPlayz#0255 *https://discord.gg/QGThVHWzrM*')
+
+	local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+	local X = Material.Load({
+		Title = "OrHub",
+		Style = 3,
+		SizeX = 500,
+		SizeY = 350,
+		Theme = "Dark",
+		ColorOverrides = {
+			MainFrame = Color3.fromRGB(60,60,60)
+		}
+	})
+
+	local Main = X.New({
+		Title = "Main"
+	})
+
+	local Credits = X.New({
+		Title = "Credits"
+	})
+
+	local A = Main.Button({
+		Text = "Spinny Penis (NEW)",
+		Callback = function()
+			loadstring(game:HttpGet("https://pastebin.com/raw/UgVQ0DhY", true))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "nigggercummmeddd"
+				})
+			end
+		}
+	})
+
+	local A = Main.Button({
+		Text = "USC (Remade Edit)",
+		Callback = function()
+			loadstring(game:HttpGet("https://pastebin.com/raw/VSb0yyvy", true))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+
+	local A = Main.Button({
+		Text = "Hammer Smasher (Revamped)",
+		Callback = function()
+			loadstring(game:HttpGet("https://pastebin.com/raw/bgYZz7bY", true))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+
+	local A = Main.Button({
+		Text = "Levitating Sniper (NEW)",
+		Callback = function()
+			loadstring(game:HttpGet('https://pastebin.com/raw/cVq7CtyA'))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+
+
+
+
+	local A = Main.Button({
+		Text = "Chair Disabler (Revamped)",
+		Callback = function()
+			loadstring(game:HttpGet('https://pastebin.com/raw/p9vrca6r'))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+
+	local A = Main.Button({
+		Text = "Anti Fling (NEW)",
+		Callback = function()
+			loadstring(game:HttpGet('https://pastebin.com/raw/juQHG2mg'))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+	local A = Main.Button({
+		Text = "Net Bypass (April, 2022)",
+		Callback = function()
+			loadstring(game:HttpGet('https://paste.ee/r/vXN7L'))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+	local A = Main.Button({
+		Text = "Neptunian V (Torso Fling Edit)",
+		Callback = function()
+			loadstring(game:HttpGet('https://pastebin.com/raw/AMb014sw'))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+	local A = Main.Button({
+		Text = "Neptunian V Switcher (Revamped)",
+		Callback = function()
+			loadstring(game:HttpGet('https://pastebin.com/raw/aZdqTEJG'))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+	local A = Main.Button({
+		Text = "Leg Runner (R6)",
+		Callback = function()
+			loadstring(game:HttpGet('https://gist.githubusercontent.com/1BlueCat/7291747e9f093555573e027621f08d6e/raw/23b48f2463942befe19d81aa8a06e3222996242c/FE%2520Da%2520Feets'))()
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+
+
+
+
+
+
+
+
+
+
+	local A = Credits.Button({
+		Text = "Overlord#6666",
+		Callback = function()
+			setclipboard("Overlord#6666")
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+
+	local A = Credits.Button({
+		Text = "OrPlayz#0255",
+		Callback = function()
+			setclipboard("OrPlayz#0255")
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+
+	local A = Credits.Button({
+		Text = "OrHub Discord (Click To Copy)",
+		Callback = function()
+			setclipboard("https://discord.gg/QGThVHWzrM")
+		end,
+		Menu = {
+			Information = function(self)
+				X.Banner({
+					Text = "fortnite epic"
+				})
+			end
+		}
+	})
+end)
+end))
+TextButton21.Parent = ImageLabel1
+TextButton21.Position = UDim2.new(0.191646188, 0, 0.374144673, 0)
+TextButton21.Size = UDim2.new(0, 314, 0, 48)
+TextButton21.BackgroundColor = BrickColor.new("Institutional white")
+TextButton21.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton21.BackgroundTransparency = 1
+TextButton21.BorderSizePixel = 0
+TextButton21.Font = Enum.Font.SourceSans
+TextButton21.FontSize = Enum.FontSize.Size14
+TextButton21.Text = ""
+TextButton21.TextColor = BrickColor.new("Really black")
+TextButton21.TextColor3 = Color3.new(0, 0, 0)
+TextButton21.TextSize = 14
+ImageLabel22.Name = "TextButton_Roundify_12px"
+ImageLabel22.Parent = TextButton21
+ImageLabel22.Position = UDim2.new(0.454493761, 0, 0.479166657, 0)
+ImageLabel22.Size = UDim2.new(0.570905268, 0, 1, 0)
+ImageLabel22.Active = true
+ImageLabel22.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel22.BackgroundColor = BrickColor.new("Institutional white")
+ImageLabel22.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel22.BackgroundTransparency = 1
+ImageLabel22.Selectable = true
+ImageLabel22.Image = "rbxassetid://3570695787"
+ImageLabel22.ImageColor3 = Color3.new(0.301961, 0.301961, 0.301961)
+ImageLabel22.ScaleType = Enum.ScaleType.Slice
+ImageLabel22.SliceCenter = 100, 100, 100, 100
+table.insert(cors,sandbox(LocalScript23,function()
+script.Parent.MouseButton1Click:Connect(function()
+	function sandbox(var,func)
+		local env = getfenv(func)
+		local newenv = setmetatable({},{
+			__index = function(self,k)
+				if k=="script" then
+					return var
+				else
+					return env[k]
+				end
+			end,
+		})
+		setfenv(func,newenv)
+		return func
+	end
+	cors = {}
+	mas = Instance.new("Model",game:GetService("Lighting"))
+	Tool0 = Instance.new("Tool")
+	Part1 = Instance.new("Part")
+	CylinderMesh2 = Instance.new("CylinderMesh")
+	Part3 = Instance.new("Part")
+	LocalScript4 = Instance.new("LocalScript")
+	Script5 = Instance.new("Script")
+	LocalScript6 = Instance.new("LocalScript")
+	Script7 = Instance.new("Script")
+	LocalScript8 = Instance.new("LocalScript")
+	Part9 = Instance.new("Part")
+	Script10 = Instance.new("Script")
+	Part11 = Instance.new("Part")
+	Script12 = Instance.new("Script")
+	Part13 = Instance.new("Part")
+	Script14 = Instance.new("Script")
+	Tool0.Name = "Telekinesis Gun"
+	Tool0.Parent = mas
+	Tool0.CanBeDropped = false
+	Part1.Name = "Handle"
+	Part1.Parent = Tool0
+	Part1.Material = Enum.Material.Neon
+	Part1.BrickColor = BrickColor.new("Cyan")
+	Part1.Transparency = 1
+	Part1.Rotation = Vector3.new(0, 15.4200001, 0)
+	Part1.CanCollide = false
+	Part1.FormFactor = Enum.FormFactor.Custom
+	Part1.Size = Vector3.new(1, 0.400000036, 0.300000012)
+	Part1.CFrame = CFrame.new(-55.2695465, 0.696546972, 0.383156985, 0.96399641, -4.98074878e-05, 0.265921414, 4.79998416e-05, 1, 1.32960558e-05, -0.265921414, -5.30653779e-08, 0.96399641)
+	Part1.BottomSurface = Enum.SurfaceType.Smooth
+	Part1.TopSurface = Enum.SurfaceType.Smooth
+	Part1.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Part1.Position = Vector3.new(-55.2695465, 0.696546972, 0.383156985)
+	Part1.Orientation = Vector3.new(0, 15.4200001, 0)
+	Part1.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	CylinderMesh2.Parent = Part1
+	CylinderMesh2.Scale = Vector3.new(0.100000001, 0.100000001, 0.100000001)
+	CylinderMesh2.Scale = Vector3.new(0.100000001, 0.100000001, 0.100000001)
+	Part3.Name = "Shoot"
+	Part3.Parent = Tool0
+	Part3.Material = Enum.Material.Neon
+	Part3.BrickColor = BrickColor.new("Cyan")
+	Part3.Reflectance = 0.30000001192093
+	Part3.Transparency = 1
+	Part3.Rotation = Vector3.new(90.9799957, 0.25999999, -91.409996)
+	Part3.CanCollide = false
+	Part3.FormFactor = Enum.FormFactor.Custom
+	Part3.Size = Vector3.new(0.200000003, 0.25, 0.310000032)
+	Part3.CFrame = CFrame.new(-54.7998123, 0.774299085, -0.757350147, -0.0245519895, 0.99968797, 0.00460194098, 0.0169109926, 0.00501798885, -0.999844491, -0.999555528, -0.0244703442, -0.0170289185)
+	Part3.BottomSurface = Enum.SurfaceType.Smooth
+	Part3.TopSurface = Enum.SurfaceType.Smooth
+	Part3.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Part3.Position = Vector3.new(-54.7998123, 0.774299085, -0.757350147)
+	Part3.Orientation = Vector3.new(88.9899979, 164.87999, 73.4700012)
+	Part3.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	LocalScript4.Parent = Tool0
+	table.insert(cors,sandbox(LocalScript4,function()
+		-- Variables for services
+		local render = game:GetService("RunService").RenderStepped
+		local contextActionService = game:GetService("ContextActionService")
+		local userInputService = game:GetService("UserInputService")
+
+		local player = game.Players.LocalPlayer
+		local mouse = player:GetMouse()
+		local Tool = script.Parent
+
+		-- Variables for Module Scripts
+		local screenSpace = require(Tool:WaitForChild("ScreenSpace"))
+
+		local connection
+		-- Variables for character joints
+
+		local neck, shoulder, oldNeckC0, oldShoulderC0 
+
+		local mobileShouldTrack = true
+
+		-- Thourough check to see if a character is sitting
+		local function amISitting(character)
+			local t = character.Torso
+			for _, part in pairs(t:GetConnectedParts(true)) do
+				if part:IsA("Seat") or part:IsA("VehicleSeat") then
+					return true
+				end
+			end
+		end
+
+		-- Function to call on renderstepped. Orients the character so it is facing towards
+		-- the player mouse's position in world space. If character is sitting then the torso
+		-- should not track
+		local function frame(mousePosition)
+			-- Special mobile consideration. We don't want to track if the user was touching a ui
+			-- element such as the movement controls. Just return out of function if so to make sure
+			-- character doesn't track
+			if not mobileShouldTrack then return end
+
+			-- Make sure character isn't swiming. If the character is swimming the following code will
+			-- not work well; the character will not swim correctly. Besides, who shoots underwater?
+			if player.Character.Humanoid:GetState() ~= Enum.HumanoidStateType.Swimming then
+				local torso = player.Character.Torso
+				local head = player.Character.Head
+
+				local toMouse = (mousePosition - head.Position).unit
+				local angle = math.acos(toMouse:Dot(Vector3.new(0,1,0)))
+
+				local neckAngle = angle
+
+				-- Limit how much the head can tilt down. Too far and the head looks unnatural
+				if math.deg(neckAngle) > 110 then
+					neckAngle = math.rad(110)
+				end
+				neck.C0 = CFrame.new(0,1,0) * CFrame.Angles(math.pi - neckAngle,math.pi,0)
+
+				-- Calculate horizontal rotation
+				local arm = player.Character:FindFirstChild("Right Arm")
+				local fromArmPos = torso.Position + torso.CFrame:vectorToWorldSpace(Vector3.new(
+					torso.Size.X/2 + arm.Size.X/2, torso.Size.Y/2 - arm.Size.Z/2, 0))
+				local toMouseArm = ((mousePosition - fromArmPos) * Vector3.new(1,0,1)).unit
+				local look = (torso.CFrame.lookVector * Vector3.new(1,0,1)).unit
+				local lateralAngle = math.acos(toMouseArm:Dot(look))		
+
+				-- Check for rogue math
+				if tostring(lateralAngle) == "-1.#IND" then
+					lateralAngle = 0
+				end		
+
+				-- Handle case where character is sitting down
+				if player.Character.Humanoid:GetState() == Enum.HumanoidStateType.Seated then			
+
+					local cross = torso.CFrame.lookVector:Cross(toMouseArm)
+					if lateralAngle > math.pi/2 then
+						lateralAngle = math.pi/2
+					end
+					if cross.Y < 0 then
+						lateralAngle = -lateralAngle
+					end
+				end	
+
+				-- Turn shoulder to point to mouse
+				shoulder.C0 = CFrame.new(1,0.5,0) * CFrame.Angles(math.pi/2 - angle,math.pi/2 + lateralAngle,0)	
+
+				-- If not sitting then aim torso laterally towards mouse
+				if not amISitting(player.Character) then
+					torso.CFrame = CFrame.new(torso.Position, torso.Position + (Vector3.new(
+						mousePosition.X, torso.Position.Y, mousePosition.Z)-torso.Position).unit)
+				else
+					--print("sitting")		
+				end	
+			end
+		end
+
+		-- Function to bind to render stepped if player is on PC
+		local function pcFrame()
+			frame(mouse.Hit.p)
+		end
+
+		-- Function to bind to touch moved if player is on mobile
+		local function mobileFrame(touch, processed)
+			-- Check to see if the touch was on a UI element. If so, we don't want to update anything
+			if not processed then
+				-- Calculate touch position in world space. Uses Stravant's ScreenSpace Module script
+				-- to create a ray from the camera.
+				local test = screenSpace.ScreenToWorld(touch.Position.X, touch.Position.Y, 1)
+				local nearPos = game.Workspace.CurrentCamera.CoordinateFrame:vectorToWorldSpace(screenSpace.ScreenToWorld(touch.Position.X, touch.Position.Y, 1))
+				nearPos = game.Workspace.CurrentCamera.CoordinateFrame.p - nearPos
+				local farPos = screenSpace.ScreenToWorld(touch.Position.X, touch.Position.Y,50) 
+				farPos = game.Workspace.CurrentCamera.CoordinateFrame:vectorToWorldSpace(farPos) * -1
+				if farPos.magnitude > 900 then
+					farPos = farPos.unit * 900
+				end
+				local ray = Ray.new(nearPos, farPos)
+				local part, pos = game.Workspace:FindPartOnRay(ray, player.Character)
+
+				-- if a position was found on the ray then update the character's rotation
+				if pos then
+					frame(pos)
+				end
+			end
+		end
+
+		local oldIcon = nil
+		-- Function to bind to equip event
+		local function equip()
+			local torso = player.Character.Torso
+
+			-- Setup joint variables
+			neck = torso.Neck	
+			oldNeckC0 = neck.C0
+			shoulder = torso:FindFirstChild("Right Shoulder")
+			oldShoulderC0 = shoulder.C0
+
+			-- Remember old mouse icon and update current
+			oldIcon = mouse.Icon
+			mouse.Icon = "rbxassetid:// 2184939409"
+
+			-- Bind TouchMoved event if on mobile. Otherwise connect to renderstepped
+			if userInputService.TouchEnabled then
+				connection = userInputService.TouchMoved:connect(mobileFrame)
+			else
+				connection = render:connect(pcFrame)
+			end
+
+			-- Bind TouchStarted and TouchEnded. Used to determine if character should rotate
+			-- during touch input
+			userInputService.TouchStarted:connect(function(touch, processed)
+				mobileShouldTrack = not processed
+			end)	
+			userInputService.TouchEnded:connect(function(touch, processed)
+				mobileShouldTrack = false
+			end)
+
+			-- Fire server's equip event
+			game.ReplicatedStorage.ROBLOX_PistolEquipEvent:FireServer()
+
+			-- Bind event for when mouse is clicked to fire server's fire event
+			mouse.Button1Down:connect(function()
+				game.ReplicatedStorage.ROBLOX_PistolFireEvent:FireServer(mouse.Hit.p)
+			end)
+
+			-- Bind reload event to mobile button and r key
+			contextActionService:BindActionToInputTypes("Reload", function() 
+				game.ReplicatedStorage.ROBLOX_PistolReloadEvent:FireServer()		
+			end, true, "")
+
+			-- If game uses filtering enabled then need to update server while tool is
+			-- held by character.
+			if workspace.FilteringEnabled then
+				while connection do
+					wait()
+					game.ReplicatedStorage.ROBLOX_PistolUpdateEvent:FireServer(neck.C0, shoulder.C0)
+				end
+			end
+		end
+
+		-- Function to bind to Unequip event
+		local function unequip()
+			if connection then connection:disconnect() end
+			contextActionService:UnbindAction("Reload")
+			game.ReplicatedStorage.ROBLOX_PistolUnequipEvent:FireServer()
+			mouse.Icon = oldIcon
+			neck.C0 = oldNeckC0
+			shoulder.C0 = oldShoulderC0
+		end
+
+		-- Bind tool events
+		Tool.Equipped:connect(equip)
+		Tool.Unequipped:connect(unequip)
+	end))
+	Script5.Name = "qPerfectionWeld"
+	Script5.Parent = Tool0
+	table.insert(cors,sandbox(Script5,function()
+		-- Created by Quenty (@Quenty, follow me on twitter).
+		-- Should work with only ONE copy, seamlessly with weapons, trains, et cetera.
+		-- Parts should be ANCHORED before use. It will, however, store relatives values and so when tools are reparented, it'll fix them.
+
+--[[ INSTRUCTIONS
+- Place in the model
+- Make sure model is anchored
+- That's it. It will weld the model and all children. 
+ 
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+ 
+This script is designed to be used is a regular script. In a local script it will weld, but it will not attempt to handle ancestory changes. 
+]]
+
+--[[ DOCUMENTATION
+- Will work in tools. If ran more than once it will not create more than one weld.  This is especially useful for tools that are dropped and then picked up again.
+- Will work in PBS servers
+- Will work as long as it starts out with the part anchored
+- Stores the relative CFrame as a CFrame value
+- Takes careful measure to reduce lag by not having a joint set off or affected by the parts offset from origin
+- Utilizes a recursive algorith to find all parts in the model
+- Will reweld on script reparent if the script is initially parented to a tool.
+- Welds as fast as possible
+]]
+
+		-- qPerfectionWeld.lua
+		-- Created 10/6/2014
+		-- Author: Quenty
+		-- Version 1.0.3
+
+		-- Updated 10/14/2014 - Updated to 1.0.1
+		--- Bug fix with existing ROBLOX welds ? Repro by asimo3089
+
+		-- Updated 10/14/2014 - Updated to 1.0.2
+		--- Fixed bug fix. 
+
+		-- Updated 10/14/2014 - Updated to 1.0.3
+		--- Now handles joints semi-acceptably. May be rather hacky with some joints. :/
+
+		local NEVER_BREAK_JOINTS = false -- If you set this to true it will never break joints (this can create some welding issues, but can save stuff like hinges).
+
+
+		local function CallOnChildren(Instance, FunctionToCall)
+			-- Calls a function on each of the children of a certain object, using recursion.  
+
+			FunctionToCall(Instance)
+
+			for _, Child in next, Instance:GetChildren() do
+				CallOnChildren(Child, FunctionToCall)
+			end
+		end
+
+		local function GetNearestParent(Instance, ClassName)
+			-- Returns the nearest parent of a certain class, or returns nil
+
+			local Ancestor = Instance
+			repeat
+				Ancestor = Ancestor.Parent
+				if Ancestor == nil then
+					return nil
+				end
+			until Ancestor:IsA(ClassName)
+
+			return Ancestor
+		end
+
+		local function GetBricks(StartInstance)
+			local List = {}
+
+			-- if StartInstance:IsA("BasePart") then
+			-- 	List[#List+1] = StartInstance
+			-- end
+
+			CallOnChildren(StartInstance, function(Item)
+				if Item:IsA("BasePart") then
+					List[#List+1] = Item;
+				end
+			end)
+
+			return List
+		end
+
+		local function Modify(Instance, Values)
+			-- Modifies an Instance by using a table.  
+
+			assert(type(Values) == "table", "Values is not a table");
+
+			for Index, Value in next, Values do
+				if type(Index) == "number" then
+					Value.Parent = Instance
+				else
+					Instance[Index] = Value
+				end
+			end
+			return Instance
+		end
+
+		local function Make(ClassType, Properties)
+			-- Using a syntax hack to create a nice way to Make new items.  
+
+			return Modify(Instance.new(ClassType), Properties)
+		end
+
+		local Surfaces = {"TopSurface", "BottomSurface", "LeftSurface", "RightSurface", "FrontSurface", "BackSurface"}
+		local HingSurfaces = {"Hinge", "Motor", "SteppingMotor"}
+
+		local function HasWheelJoint(Part)
+			for _, SurfaceName in pairs(Surfaces) do
+				for _, HingSurfaceName in pairs(HingSurfaces) do
+					if Part[SurfaceName].Name == HingSurfaceName then
+						return true
+					end
+				end
+			end
+
+			return false
+		end
+
+		local function ShouldBreakJoints(Part)
+			--- We do not want to break joints of wheels/hinges. This takes the utmost care to not do this. There are
+			--  definitely some edge cases. 
+
+			if NEVER_BREAK_JOINTS then
+				return false
+			end
+
+			if HasWheelJoint(Part) then
+				return false
+			end
+
+			local Connected = Part:GetConnectedParts()
+
+			if #Connected == 1 then
+				return false
+			end
+
+			for _, Item in pairs(Connected) do
+				if HasWheelJoint(Item) then
+					return false
+				elseif not Item:IsDescendantOf(script.Parent) then
+					return false
+				end
+			end
+
+			return true
+		end
+
+		local function WeldTogether(Part0, Part1, JointType, WeldParent)
+			--- Weld's 2 parts together
+			-- @param Part0 The first part
+			-- @param Part1 The second part (Dependent part most of the time).
+			-- @param [JointType] The type of joint. Defaults to weld.
+			-- @param [WeldParent] Parent of the weld, Defaults to Part0 (so GC is better).
+			-- @return The weld created.
+
+			JointType = JointType or "Weld"
+			local RelativeValue = Part1:FindFirstChild("qRelativeCFrameWeldValue")
+
+			local NewWeld = Part1:FindFirstChild("qCFrameWeldThingy") or Instance.new(JointType)
+			Modify(NewWeld, {
+				Name = "qCFrameWeldThingy";
+				Part0  = Part0;
+				Part1  = Part1;
+				C0     = CFrame.new();--Part0.CFrame:inverse();
+				C1     = RelativeValue and RelativeValue.Value or Part1.CFrame:toObjectSpace(Part0.CFrame); --Part1.CFrame:inverse() * Part0.CFrame;-- Part1.CFrame:inverse();
+				Parent = Part1;
+			})
+
+			if not RelativeValue then
+				RelativeValue = Make("CFrameValue", {
+					Parent     = Part1;
+					Name       = "qRelativeCFrameWeldValue";
+					Archivable = true;
+					Value      = NewWeld.C1;
+				})
+			end
+
+			return NewWeld
+		end
+
+		local function WeldParts(Parts, MainPart, JointType, DoNotUnanchor)
+			-- @param Parts The Parts to weld. Should be anchored to prevent really horrible results.
+			-- @param MainPart The part to weld the model to (can be in the model).
+			-- @param [JointType] The type of joint. Defaults to weld. 
+			-- @parm DoNotUnanchor Boolean, if true, will not unachor the model after cmopletion.
+
+			for _, Part in pairs(Parts) do
+				if ShouldBreakJoints(Part) then
+					Part:BreakJoints()
+				end
+			end
+
+			for _, Part in pairs(Parts) do
+				if Part ~= MainPart then
+					WeldTogether(MainPart, Part, JointType, MainPart)
+				end
+			end
+
+			if not DoNotUnanchor then
+				for _, Part in pairs(Parts) do
+					Part.Anchored = false
+				end
+				MainPart.Anchored = false
+			end
+		end
+
+		local function PerfectionWeld()	
+			local Tool = GetNearestParent(script, "Tool")
+
+			local Parts = GetBricks(script.Parent)
+			local PrimaryPart = Tool and Tool:FindFirstChild("Handle") and Tool.Handle:IsA("BasePart") and Tool.Handle or script.Parent:IsA("Model") and script.Parent.PrimaryPart or Parts[1]
+
+			if PrimaryPart then
+				WeldParts(Parts, PrimaryPart, "Weld", false)
+			else
+				warn("qWeld - Unable to weld part")
+			end
+
+			return Tool
+		end
+
+		local Tool = PerfectionWeld()
+
+
+		if Tool and script.ClassName == "Script" then
+			--- Don't bother with local scripts
+
+			script.Parent.AncestryChanged:connect(function()
+				PerfectionWeld()
+			end)
+		end
+
+		-- Created by Quenty (@Quenty, follow me on twitter).
+
+	end))
+	LocalScript6.Name = "Animate"
+	LocalScript6.Parent = Tool0
+	table.insert(cors,sandbox(LocalScript6,function()
+		local arms = nil
+		local torso = nil
+		local welds = {}
+		local Tool = script.Parent
+		local neck = nil
+		local orginalC0 = CFrame.new(0, 1, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+
+		function Equip(mouse)
+			wait(0.01)
+			arms = {Tool.Parent:FindFirstChild("Left Arm"), Tool.Parent:FindFirstChild("Right Arm")}
+			head = Tool.Parent:FindFirstChild("Head") 
+			torso = Tool.Parent:FindFirstChild("Torso")
+			if neck == nil then 
+				neck = Tool.Parent:FindFirstChild("Torso").Neck
+			end 
+			if arms ~= nil and torso ~= nil then
+				local sh = {torso:FindFirstChild("Left Shoulder"), torso:FindFirstChild("Right Shoulder")}
+				if sh ~= nil then
+					local yes = true
+					if yes then
+						yes = false
+						sh[1].Part1 = nil
+						sh[2].Part1 = nil
+						local weld1 = Instance.new("Weld")
+						weld1.Part0 = head
+						weld1.Parent = head
+						weld1.Part1 = arms[1]
+						welds[1] = weld1
+						local weld2 = Instance.new("Weld")
+						weld2.Part0 = head
+						weld2.Parent = head
+						weld2.Part1 = arms[2]
+						welds[2] = weld2
+						-------------------------here
+						weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0, math.rad(-90))
+						weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(-15), 0)
+						mouse.Move:connect(function ()
+							--local Direction = Tool.Direction.Value 
+							local Direction = mouse.Hit.p
+							local b = head.Position.Y-Direction.Y
+							local dist = (head.Position-Direction).magnitude
+							local answer = math.asin(b/dist)
+							neck.C0=orginalC0*CFrame.fromEulerAnglesXYZ(answer,0,0)
+							wait(0.1)
+						end)end
+				else
+					print("sh")
+				end
+			else
+				print("arms")
+			end
+		end
+
+		function Unequip(mouse)
+			if arms ~= nil and torso ~= nil then
+				local sh = {torso:FindFirstChild("Left Shoulder"), torso:FindFirstChild("Right Shoulder")}
+				if sh ~= nil then
+					local yes = true
+					if yes then
+						yes = false
+						neck.C0 = orginalC0
+
+						sh[1].Part1 = arms[1]
+						sh[2].Part1 = arms[2]
+						welds[1].Parent = nil
+						welds[2].Parent = nil
+					end
+				else
+					print("sh")
+				end
+			else
+				print("arms")
+			end
+		end
+		Tool.Equipped:connect(Equip)
+		Tool.Unequipped:connect(Unequip)
+
+		function Animate()
+			arms = {Tool.Parent:FindFirstChild("Left Arm"), Tool.Parent:FindFirstChild("Right Arm")}
+			if Tool.AnimateValue.Value == "Shoot" then 
+				local weld1 = welds[1]
+				local weld2 = welds[2]
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(-15), 0)
+				wait(0.00001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.05, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(-15), 0)
+				wait(0.00001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.1, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-95), math.rad(-15), 0)
+				wait(0.00001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.3, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-110), math.rad(-15), 0)
+				wait(0.00001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.35, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-115), math.rad(-15), 0)
+				wait(0.00001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.4, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-120), math.rad(-15), 0)
+				wait(0.00001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(-15), 0)	
+				Tool.AnimateValue.Value = "None"
+			end 
+			if Tool.AnimateValue.Value == "Reload" then 
+				local weld1 = welds[1]
+				local weld2 = welds[2]
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(-15), 0)
+				wait(0.0001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.4, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(-15), 0)
+				wait(0.0001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.4, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-95), math.rad(-15), 0)
+				wait(0.0001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.4, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-100), math.rad(-15), 0)
+				wait(0.0001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.4, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-105), math.rad(-15), 0)
+				wait(0.0001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.4, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-110), math.rad(-15), 0)
+				wait(0.0001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.4, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-115), math.rad(-15), 0)
+				wait(0.0001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.45, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-120), math.rad(-15), 0)
+				wait(0.0001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.9, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.5, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-120), math.rad(-15), 0)
+				wait(0.0001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 1, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.55, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-120), math.rad(-15), 0)
+				wait(0.0001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 1.1, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.57, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-120), math.rad(-15), 0)
+				wait(0.0001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 1.2, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.6, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-120), math.rad(-15), 0)
+				wait(0.0001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 1.3, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.6, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-120), math.rad(-15), 0)
+				wait(0.0001)
+				weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0, math.rad(-90))
+				weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(-15), 0)	
+				Tool.AnimateValue.Value = "None"
+			end 
+		end 
+
+		Tool.AnimateValue.Changed:connect(Animate)
+
+	end))
+	Script7.Name = "LineConnect"
+	Script7.Parent = Tool0
+	Script7.Disabled = true
+	table.insert(cors,sandbox(Script7,function()
+		wait()
+		local check = script.Part2
+		local part1 = script.Part1.Value
+		local part2 = script.Part2.Value
+		local parent = script.Par.Value
+		local color = script.Color
+		local line = Instance.new("Part")
+		line.TopSurface = 0
+		line.BottomSurface = 0
+		line.Reflectance = .5
+		line.Name = "Laser"
+		line.Transparency = 0.6
+		line.Locked = true
+		line.CanCollide = false
+		line.Anchored = true
+		line.formFactor = 0
+		line.Size = Vector3.new(0.4,0.4,1)
+		local mesh = Instance.new("BlockMesh")
+		mesh.Parent = line
+		while true do
+			if (check.Value==nil) then break end
+			if (part1==nil or part2==nil or parent==nil) then break end
+			if (part1.Parent==nil or part2.Parent==nil) then break end
+			if (parent.Parent==nil) then break end
+			local lv = CFrame.new(part1.Position,part2.Position)
+			local dist = (part1.Position-part2.Position).magnitude
+			line.Parent = parent
+			line.Material = "Neon"
+			line.BrickColor = color.Value.BrickColor
+			line.Reflectance = color.Value.Reflectance
+			line.Transparency = "0.2"
+			line.CFrame = CFrame.new(part1.Position+lv.lookVector*dist/2)
+			line.CFrame = CFrame.new(line.Position,part2.Position)
+			mesh.Scale = Vector3.new(.25,.25,dist)
+			wait()
+		end
+		line:remove()
+		script:remove() 
+	end))
+	LocalScript8.Name = "MainScript"
+	LocalScript8.Parent = Tool0
+	table.insert(cors,sandbox(LocalScript8,function()
+		--Physics gun created by Killersoldier45
+		wait() 
+		tool = script.Parent
+		lineconnect = tool.LineConnect
+		object = nil
+		mousedown = false
+		found = false
+		BP = Instance.new("BodyPosition")
+		BP.maxForce = Vector3.new(math.huge*math.huge,math.huge*math.huge,math.huge*math.huge) --pwns everyone elses bodyposition
+		BP.P = BP.P*10 --faster movement. less bounceback.
+		dist = nil
+		point = Instance.new("Part")
+		point.Locked = true
+		point.Anchored = true
+		point.formFactor = 0
+		point.Shape = 0
+		point.Material = 'Neon'
+		point.BrickColor = BrickColor.new("Toothpaste")
+		point.Size = Vector3.new(1,1,1)
+		point.CanCollide = false
+		local mesh = Instance.new("SpecialMesh")
+		mesh.MeshType = "Sphere"
+		mesh.Scale = Vector3.new(.2,.2,.2)
+		mesh.Parent = point
+		handle = tool.Shoot
+		front = tool.Shoot
+		color = tool.Shoot
+		objval = nil
+		local hooked = false 
+		local hookBP = BP:clone() 
+		hookBP.maxForce = Vector3.new(30000,30000,30000) 
+
+		function LineConnect(part1,part2,parent)
+			local p1 = Instance.new("ObjectValue")
+			p1.Value = part1
+			p1.Name = "Part1"
+			local p2 = Instance.new("ObjectValue")
+			p2.Value = part2
+			p2.Name = "Part2"
+			local par = Instance.new("ObjectValue")
+			par.Value = parent
+			par.Name = "Par"
+			local col = Instance.new("ObjectValue")
+			col.Value = color
+			col.Name = "Color"
+			local s = lineconnect:clone()
+			s.Disabled = false
+			p1.Parent = s
+			p2.Parent = s
+			par.Parent = s
+			col.Parent = s
+			s.Parent = workspace
+			if (part2==object) then
+				objval = p2
+			end
+		end
+
+		function onButton1Down(mouse)
+			if (mousedown==true) then return end
+			mousedown = true
+			coroutine.resume(coroutine.create(function()
+				local p = point:clone()
+				p.Parent = tool
+				LineConnect(front,p,workspace)
+				while (mousedown==true) do
+					p.Parent = tool
+					if (object==nil) then
+						if (mouse.Target==nil) then
+							local lv = CFrame.new(front.Position,mouse.Hit.p)
+							p.CFrame = CFrame.new(front.Position+(lv.lookVector*1000))
+						else
+							p.CFrame = CFrame.new(mouse.Hit.p)
+						end
+					else
+						LineConnect(front,object,workspace)
+						break
+					end
+					wait()
+				end
+				p:remove()
+			end))
+			while (mousedown==true) do
+				if (mouse.Target~=nil) then
+					local t = mouse.Target
+					if (t.Anchored==false) then
+						object = t
+						dist = (object.Position-front.Position).magnitude
+						break
+					end
+				end
+				wait()
+			end
+			while (mousedown==true) do
+				if (object.Parent==nil) then break end
+				local lv = CFrame.new(front.Position,mouse.Hit.p)
+				BP.Parent = object
+				BP.position = front.Position+lv.lookVector*dist
+				wait()
+			end
+			BP:remove()
+			object = nil
+			objval.Value = nil
+		end
+
+		function onKeyDown(key,mouse) 
+			local key = key:lower() 
+			local yesh = false 
+			if (key=="q") then 
+				if (dist>=5) then 
+					dist = dist-5 
+				end 
+			end 
+			if key == "t" then 
+				if (object==nil) then return end 
+				for _,v in pairs(object:children()) do 
+					if v.className == "BodyGyro" then 
+						return nil 
+					end 
+				end 
+				BG = Instance.new("BodyGyro") 
+				BG.maxTorque = Vector3.new(math.huge,math.huge,math.huge) 
+				BG.cframe = CFrame.new(object.CFrame.p) 
+				BG.Parent = object 
+				repeat wait() until(object.CFrame == CFrame.new(object.CFrame.p)) 
+				BG.Parent = nil 
+				if (object==nil) then return end 
+				for _,v in pairs(object:children()) do 
+					if v.className == "BodyGyro" then 
+						v.Parent = nil 
+					end 
+				end 
+				object.Velocity = Vector3.new(0,0,0) 
+				object.RotVelocity = Vector3.new(0,0,0) 
+			end 
+			if (key=="e") then
+				dist = dist+5
+			end
+			if (string.byte(key)==27) then 
+				if (object==nil) then return end
+				local e = Instance.new("Explosion")
+				e.Parent = workspace
+				e.Position = object.Position
+				color.BrickColor = BrickColor.Black()
+				point.BrickColor = BrickColor.White() 
+				wait(.48)
+				color.BrickColor = BrickColor.White() 
+				point.BrickColor = BrickColor.Black() 
+			end
+			if (key=="") then 
+				if not hooked then 
+					if (object==nil) then return end 
+					hooked = true 
+					hookBP.position = object.Position 
+					if tool.Parent:findFirstChild("Torso") then 
+						hookBP.Parent = tool.Parent.Torso 
+						if dist ~= (object.Size.x+object.Size.y+object.Size.z)+5 then 
+							dist = (object.Size.x+object.Size.y+object.Size.z)+5 
+						end 
+					end 
+				else 
+					hooked = false 
+					hookBP.Parent = nil 
+				end 
+			end 
+			if (key=="r") then 
+				if (object==nil) then return end 
+				color.BrickColor = BrickColor.new("Toothpaste") 
+				point.BrickColor = BrickColor.new("Toothpaste") 
+				object.Parent = nil 
+				wait(.48) 
+				color.BrickColor = BrickColor.new("Toothpaste")
+				point.BrickColor = BrickColor.new("Toothpaste")
+			end 
+			if (key=="x") then 
+				if (object==nil) then return end 
+				local New = object:clone() 
+				New.Parent = object.Parent 
+				for _,v in pairs(New:children()) do 
+					if v.className == "BodyPosition" or v.className == "BodyGyro" then 
+						v.Parent = nil 
+					end 
+				end 
+				object = New 
+				mousedown = false 
+				mousedown = true 
+				LineConnect(front,object,workspace) 
+				while (mousedown==true) do
+					if (object.Parent==nil) then break end
+					local lv = CFrame.new(front.Position,mouse.Hit.p)
+					BP.Parent = object
+					BP.position = front.Position+lv.lookVector*dist
+					wait()
+				end
+				BP:remove()
+				object = nil
+				objval.Value = nil
+			end 
+			if (key=="c") then 
+				local Cube = Instance.new("Part") 
+				Cube.Locked = true 
+				Cube.Size = Vector3.new(4,4,4) 
+				Cube.formFactor = 0 
+				Cube.TopSurface = 0 
+				Cube.BottomSurface = 0 
+				Cube.Name = "WeightedStorageCube" 
+				Cube.Parent = workspace 
+				Cube.CFrame = CFrame.new(mouse.Hit.p) + Vector3.new(0,2,0) 
+				for i = 0,5 do 
+					local Decal = Instance.new("Decal") 
+					Decal.Texture = "http://www.roblox.com/asset/?id=2662260" 
+					Decal.Face = i 
+					Decal.Name = "WeightedStorageCubeDecal" 
+					Decal.Parent = Cube 
+				end 
+			end 
+			if (key=="") then 
+				if dist ~= 15 then 
+					dist = 15 
+				end 
+			end 
+		end
+
+		function onEquipped(mouse)
+			keymouse = mouse
+			local char = tool.Parent
+			human = char.Humanoid
+			human.Changed:connect(function() if (human.Health==0) then mousedown = false BP:remove() point:remove() tool:remove() end end)
+			mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+			mouse.Button1Up:connect(function() mousedown = false end)
+			mouse.KeyDown:connect(function(key) onKeyDown(key,mouse) end)
+			mouse.Icon = "rbxassetid://2184939409"
+		end
+
+		tool.Equipped:connect(onEquipped)
+	end))
+	Part9.Name = "GlowPart"
+	Part9.Parent = Tool0
+	Part9.Material = Enum.Material.Neon
+	Part9.BrickColor = BrickColor.new("Cyan")
+	Part9.Transparency = 0.5
+	Part9.Rotation = Vector3.new(0, -89.5899963, 0)
+	Part9.Shape = Enum.PartType.Cylinder
+	Part9.Size = Vector3.new(1.20000005, 0.649999976, 2)
+	Part9.CFrame = CFrame.new(-54.8191681, 0.773548007, -0.0522949994, 0.00736002205, 4.68389771e-11, -0.999974668, 4.72937245e-11, 1, 1.41590961e-10, 0.999974668, 5.09317033e-11, 0.00736002252)
+	Part9.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Part9.Position = Vector3.new(-54.8191681, 0.773548007, -0.0522949994)
+	Part9.Orientation = Vector3.new(0, -89.5799942, 0)
+	Part9.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Script10.Name = "Glow Script"
+	Script10.Parent = Part9
+	table.insert(cors,sandbox(Script10,function()
+		while true do
+			wait(0.05)
+			script.Parent.Transparency = .5
+			wait(0.05)
+			script.Parent.Transparency = .6
+			wait(0.05)
+			script.Parent.Transparency = .7
+			wait(0.05)
+			script.Parent.Transparency = .8
+			wait(0.05)
+			script.Parent.Transparency = .9
+			wait(0.05)
+			script.Parent.Transparency = .8
+			wait(0.05)
+			script.Parent.Transparency = .7
+			wait(0.05)
+			script.Parent.Transparency = .6
+			wait(0.05)
+			script.Parent.Transparency = .5
+		end
+
+	end))
+	Part11.Name = "GlowPart"
+	Part11.Parent = Tool0
+	Part11.Material = Enum.Material.Neon
+	Part11.BrickColor = BrickColor.new("Cyan")
+	Part11.Transparency = 0.5
+	Part11.Rotation = Vector3.new(-89.3799973, -55.7399979, -89.25)
+	Part11.Size = Vector3.new(0.280000001, 0.25999999, 0.200000003)
+	Part11.CFrame = CFrame.new(-54.9808807, 0.99843204, 0.799362957, 0.00736002205, 0.562958956, -0.826454222, 4.72937245e-11, 0.826475084, 0.56297338, 0.999974668, -0.00414349511, 0.00608287565)
+	Part11.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Part11.Position = Vector3.new(-54.9808807, 0.99843204, 0.799362957)
+	Part11.Orientation = Vector3.new(-34.2599983, -89.5799942, 0)
+	Part11.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Script12.Name = "Glow Script"
+	Script12.Parent = Part11
+	table.insert(cors,sandbox(Script12,function()
+		while true do
+			wait(0.05)
+			script.Parent.Transparency = .5
+			wait(0.05)
+			script.Parent.Transparency = .6
+			wait(0.05)
+			script.Parent.Transparency = .7
+			wait(0.05)
+			script.Parent.Transparency = .8
+			wait(0.05)
+			script.Parent.Transparency = .9
+			wait(0.05)
+			script.Parent.Transparency = .8
+			wait(0.05)
+			script.Parent.Transparency = .7
+			wait(0.05)
+			script.Parent.Transparency = .6
+			wait(0.05)
+			script.Parent.Transparency = .5
+		end
+
+	end))
+	Part13.Name = "GlowPart"
+	Part13.Parent = Tool0
+	Part13.Material = Enum.Material.Neon
+	Part13.BrickColor = BrickColor.new("Cyan")
+	Part13.Transparency = 0.5
+	Part13.Rotation = Vector3.new(95.1500015, -53.8199997, 98.0799942)
+	Part13.Size = Vector3.new(0.280000001, 0.25999999, 0.200000003)
+	Part13.CFrame = CFrame.new(-54.5909271, 0.978429973, 0.799362957, -0.0830051303, -0.584483683, -0.807150841, 0.0241250042, 0.808528602, -0.58796227, 0.996258855, -0.0682764053, -0.0530113392)
+	Part13.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Part13.Position = Vector3.new(-54.5909271, 0.978429973, 0.799362957)
+	Part13.Orientation = Vector3.new(36.0099983, -93.7599945, 1.70999992)
+	Part13.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Script14.Name = "Glow Script"
+	Script14.Parent = Part13
+	table.insert(cors,sandbox(Script14,function()
+		while true do
+			wait(0.05)
+			script.Parent.Transparency = .5
+			wait(0.05)
+			script.Parent.Transparency = .6
+			wait(0.05)
+			script.Parent.Transparency = .7
+			wait(0.05)
+			script.Parent.Transparency = .8
+			wait(0.05)
+			script.Parent.Transparency = .9
+			wait(0.05)
+			script.Parent.Transparency = .8
+			wait(0.05)
+			script.Parent.Transparency = .7
+			wait(0.05)
+			script.Parent.Transparency = .6
+			wait(0.05)
+			script.Parent.Transparency = .5
+		end
+
+	end))
+	for i,v in pairs(mas:GetChildren()) do
+		v.Parent = game:GetService("Players").LocalPlayer.Backpack
+		pcall(function() v:MakeJoints() end)
+	end
+	mas:Destroy()
+	for i,v in pairs(cors) do
+		spawn(function()
+			pcall(v)
+		end)
+	end
+end)
+end))
+TextLabel24.Parent = ImageLabel1
+TextLabel24.Position = UDim2.new(0.0352960229, 0, 0.418918908, 0)
+TextLabel24.Size = UDim2.new(0, 105, 0, 28)
+TextLabel24.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel24.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel24.BackgroundTransparency = 1
+TextLabel24.Font = Enum.Font.Ubuntu
+TextLabel24.FontSize = Enum.FontSize.Size24
+TextLabel24.Text = "Syntax V3"
+TextLabel24.TextColor = BrickColor.new("Really black")
+TextLabel24.TextColor3 = Color3.new(0, 0, 0)
+TextLabel24.TextSize = 20
+TextLabel25.Parent = ImageLabel1
+TextLabel25.Position = UDim2.new(0.411217391, 0, 0.414414406, 0)
+TextLabel25.Size = UDim2.new(0, 105, 0, 28)
+TextLabel25.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel25.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel25.BackgroundTransparency = 1
+TextLabel25.Font = Enum.Font.Ubuntu
+TextLabel25.FontSize = Enum.FontSize.Size24
+TextLabel25.Text = "Blue PP Gun (Not FE)"
+TextLabel25.TextColor = BrickColor.new("Really black")
+TextLabel25.TextColor3 = Color3.new(0, 0, 0)
+TextLabel25.TextSize = 20
+TextButton26.Parent = ImageLabel1
+TextButton26.Position = UDim2.new(-0.0294840299, 0, 0.585856378, 0)
+TextButton26.Size = UDim2.new(0, 179, 0, 44)
+TextButton26.BackgroundColor = BrickColor.new("Institutional white")
+TextButton26.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton26.BackgroundTransparency = 1
+TextButton26.BorderSizePixel = 0
+TextButton26.Font = Enum.Font.SourceSans
+TextButton26.FontSize = Enum.FontSize.Size14
+TextButton26.Text = ""
+TextButton26.TextColor = BrickColor.new("Really black")
+TextButton26.TextColor3 = Color3.new(0, 0, 0)
+TextButton26.TextSize = 14
+ImageLabel27.Name = "TextButton_Roundify_12px"
+ImageLabel27.Parent = TextButton26
+ImageLabel27.Position = UDim2.new(0.454493761, 0, 0.479166657, 0)
+ImageLabel27.Size = UDim2.new(0.570905268, 0, 1, 0)
+ImageLabel27.Active = true
+ImageLabel27.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel27.BackgroundColor = BrickColor.new("Institutional white")
+ImageLabel27.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel27.BackgroundTransparency = 1
+ImageLabel27.Selectable = true
+ImageLabel27.Image = "rbxassetid://3570695787"
+ImageLabel27.ImageColor3 = Color3.new(0.301961, 0.301961, 0.301961)
+ImageLabel27.ScaleType = Enum.ScaleType.Slice
+ImageLabel27.SliceCenter = 100, 100, 100, 100
+table.insert(cors,sandbox(LocalScript28,function()
+script.Parent.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://darkhub.xyz/remote-script.lua", true))()
+end)
+end))
+TextLabel29.Parent = ImageLabel1
+TextLabel29.Position = UDim2.new(0.0426670313, 0, 0.617117107, 0)
+TextLabel29.Size = UDim2.new(0, 105, 0, 28)
+TextLabel29.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel29.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel29.BackgroundTransparency = 1
+TextLabel29.Font = Enum.Font.Ubuntu
+TextLabel29.FontSize = Enum.FontSize.Size24
+TextLabel29.Text = "DarkHub"
+TextLabel29.TextColor = BrickColor.new("Really black")
+TextLabel29.TextColor3 = Color3.new(0, 0, 0)
+TextLabel29.TextSize = 20
+TextButton30.Parent = ImageLabel1
+TextButton30.Position = UDim2.new(0.179361179, 0, 0.585856378, 0)
+TextButton30.Size = UDim2.new(0, 323, 0, 44)
+TextButton30.BackgroundColor = BrickColor.new("Institutional white")
+TextButton30.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton30.BackgroundTransparency = 1
+TextButton30.BorderSizePixel = 0
+TextButton30.Font = Enum.Font.SourceSans
+TextButton30.FontSize = Enum.FontSize.Size14
+TextButton30.Text = ""
+TextButton30.TextColor = BrickColor.new("Really black")
+TextButton30.TextColor3 = Color3.new(0, 0, 0)
+TextButton30.TextSize = 14
+ImageLabel31.Name = "TextButton_Roundify_12px"
+ImageLabel31.Parent = TextButton30
+ImageLabel31.Position = UDim2.new(0.454493761, 0, 0.479166657, 0)
+ImageLabel31.Size = UDim2.new(0.570905268, 0, 1, 0)
+ImageLabel31.Active = true
+ImageLabel31.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel31.BackgroundColor = BrickColor.new("Institutional white")
+ImageLabel31.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel31.BackgroundTransparency = 1
+ImageLabel31.Selectable = true
+ImageLabel31.Image = "rbxassetid://3570695787"
+ImageLabel31.ImageColor3 = Color3.new(0.301961, 0.301961, 0.301961)
+ImageLabel31.ScaleType = Enum.ScaleType.Slice
+ImageLabel31.SliceCenter = 100, 100, 100, 100
+table.insert(cors,sandbox(LocalScript32,function()
+script.Parent.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://the-shed.xyz/roblox/scripts/ChatBypass", true))()
+end)
+end))
+TextLabel33.Parent = ImageLabel1
+TextLabel33.Position = UDim2.new(0.411217391, 0, 0.617117107, 0)
+TextLabel33.Size = UDim2.new(0, 105, 0, 28)
+TextLabel33.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel33.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel33.BackgroundTransparency = 1
+TextLabel33.Font = Enum.Font.Ubuntu
+TextLabel33.FontSize = Enum.FontSize.Size24
+TextLabel33.Text = "Sheds CHAT Bypasser"
+TextLabel33.TextColor = BrickColor.new("Really black")
+TextLabel33.TextColor3 = Color3.new(0, 0, 0)
+TextLabel33.TextSize = 20
+TextButton34.Parent = ImageLabel1
+TextButton34.Position = UDim2.new(-0.0294840299, 0, 0.779925346, 0)
+TextButton34.Size = UDim2.new(0, 179, 0, 41)
+TextButton34.BackgroundColor = BrickColor.new("Institutional white")
+TextButton34.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton34.BackgroundTransparency = 1
+TextButton34.BorderSizePixel = 0
+TextButton34.Font = Enum.Font.SourceSans
+TextButton34.FontSize = Enum.FontSize.Size14
+TextButton34.Text = ""
+TextButton34.TextColor = BrickColor.new("Really black")
+TextButton34.TextColor3 = Color3.new(0, 0, 0)
+TextButton34.TextSize = 14
+ImageLabel35.Name = "TextButton_Roundify_12px"
+ImageLabel35.Parent = TextButton34
+ImageLabel35.Position = UDim2.new(0.454493761, 0, 0.479166657, 0)
+ImageLabel35.Size = UDim2.new(0.570905268, 0, 1, 0)
+ImageLabel35.Active = true
+ImageLabel35.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel35.BackgroundColor = BrickColor.new("Institutional white")
+ImageLabel35.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel35.BackgroundTransparency = 1
+ImageLabel35.Selectable = true
+ImageLabel35.Image = "rbxassetid://3570695787"
+ImageLabel35.ImageColor3 = Color3.new(0.301961, 0.301961, 0.301961)
+ImageLabel35.ScaleType = Enum.ScaleType.Slice
+ImageLabel35.SliceCenter = 100, 100, 100, 100
+table.insert(cors,sandbox(LocalScript36,function()
+script.Parent.MouseButton1Click:Connect(function()
+	local eventbypass
+
+	eventbypass = hookmetamethod(game, "__namecall", function(self, ...)
+		local method = getnamecallmethod()
+		local args = {...}
+
+		if not checkcaller() and self.Name == "Anti_Cheat_Remote" and method == "FireServer" then
+			print("Anti Cheat remote was called and blocked.")
+			return; -- do nothing if called
+		end
+
+		return eventbypass(self, ...)
+	end)
+end)
+end))
+TextLabel37.Parent = ImageLabel1
+TextLabel37.Position = UDim2.new(0.0448608398, 0, 0.801801801, 0)
+TextLabel37.Size = UDim2.new(0, 109, 0, 28)
+TextLabel37.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel37.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel37.BackgroundTransparency = 1
+TextLabel37.Font = Enum.Font.Ubuntu
+TextLabel37.FontSize = Enum.FontSize.Size12
+TextLabel37.Text = "Bypass Anticheat"
+TextLabel37.TextColor = BrickColor.new("Really black")
+TextLabel37.TextColor3 = Color3.new(0, 0, 0)
+TextLabel37.TextSize = 12
+TextButton38.Parent = ImageLabel1
+TextButton38.Position = UDim2.new(0.171990171, 0, 0.779925346, 0)
+TextButton38.Size = UDim2.new(0, 324, 0, 41)
+TextButton38.BackgroundColor = BrickColor.new("Institutional white")
+TextButton38.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton38.BackgroundTransparency = 1
+TextButton38.BorderSizePixel = 0
+TextButton38.Font = Enum.Font.SourceSans
+TextButton38.FontSize = Enum.FontSize.Size14
+TextButton38.Text = ""
+TextButton38.TextColor = BrickColor.new("Really black")
+TextButton38.TextColor3 = Color3.new(0, 0, 0)
+TextButton38.TextSize = 14
+ImageLabel39.Name = "TextButton_Roundify_12px"
+ImageLabel39.Parent = TextButton38
+ImageLabel39.Position = UDim2.new(0.454493761, 0, 0.479166657, 0)
+ImageLabel39.Size = UDim2.new(0.570905268, 0, 1, 0)
+ImageLabel39.Active = true
+ImageLabel39.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel39.BackgroundColor = BrickColor.new("Institutional white")
+ImageLabel39.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel39.BackgroundTransparency = 1
+ImageLabel39.Selectable = true
+ImageLabel39.Image = "rbxassetid://3570695787"
+ImageLabel39.ImageColor3 = Color3.new(0.301961, 0.301961, 0.301961)
+ImageLabel39.ScaleType = Enum.ScaleType.Slice
+ImageLabel39.SliceCenter = 100, 100, 100, 100
+table.insert(cors,sandbox(LocalScript40,function()
+script.Parent.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/1Cjz1RMH"))()
+end)
+end))
+TextLabel41.Parent = ImageLabel1
+TextLabel41.Position = UDim2.new(0.411217391, 0, 0.801801801, 0)
+TextLabel41.Size = UDim2.new(0, 105, 0, 28)
+TextLabel41.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel41.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel41.BackgroundTransparency = 1
+TextLabel41.Font = Enum.Font.Ubuntu
+TextLabel41.FontSize = Enum.FontSize.Size24
+TextLabel41.Text = "Hat Hub FE (Free)"
+TextLabel41.TextColor = BrickColor.new("Really black")
+TextLabel41.TextColor3 = Color3.new(0, 0, 0)
+TextLabel41.TextSize = 20
+TextButton42.Parent = ImageLabel1
+TextButton42.Position = UDim2.new(0.761038363, 0, 0.166937485, 0)
+TextButton42.Size = UDim2.new(0, 112, 0, 46)
+TextButton42.BackgroundColor = BrickColor.new("Institutional white")
+TextButton42.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton42.BackgroundTransparency = 1
+TextButton42.BorderSizePixel = 0
+TextButton42.Font = Enum.Font.SourceSans
+TextButton42.FontSize = Enum.FontSize.Size14
+TextButton42.Text = ""
+TextButton42.TextColor = BrickColor.new("Really black")
+TextButton42.TextColor3 = Color3.new(0, 0, 0)
+TextButton42.TextSize = 14
+ImageLabel43.Name = "TextButton_Roundify_12px"
+ImageLabel43.Parent = TextButton42
+ImageLabel43.Position = UDim2.new(0.530926883, 0, 0.5, 0)
+ImageLabel43.Size = UDim2.new(0.570905268, 0, 1, 0)
+ImageLabel43.Active = true
+ImageLabel43.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel43.BackgroundColor = BrickColor.new("Institutional white")
+ImageLabel43.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel43.BackgroundTransparency = 1
+ImageLabel43.Selectable = true
+ImageLabel43.Image = "rbxassetid://3570695787"
+ImageLabel43.ImageColor3 = Color3.new(0.301961, 0.301961, 0.301961)
+ImageLabel43.ScaleType = Enum.ScaleType.Slice
+ImageLabel43.SliceCenter = 100, 100, 100, 100
+table.insert(cors,sandbox(LocalScript44,function()
+script.Parent.MouseButton1Click:Connect(function()
+	return(function(lIIIlIllIIllllIlIl,lIIIllIllllIIl,lIIIllIllllIIl)local IlIllIllIllIllll=string.char;local lIlIIIlI=string.sub;local IlIlllIlllIIlIIlIlIIllI=table.concat;local IllIllIIlllIIllllllI=math.ldexp;local IllllIlIIIllIIIIIIIl=getfenv or function()return _ENV end;local IllIlIlIIIlIIIIlll=select;local lIIllllIIlIIIllII=unpack or table.unpack;local lIIIllIllllIIl=tonumber;local IllIIIIIlIllIIlllIllIIl='\127\98\98\98\96\102\98\98\98\5\3\15\7\96\104\98\98\98\37\7\22\49\7\16\20\11\1\7\96\101\98\98\98\50\14\3\27\7\16\17\96\105\98\98\98\46\13\1\3\14\50\14\3\27\7\16\96\106\98\98\98\17\7\22\22\11\12\5\17\96\109\98\98\98\44\7\22\21\13\16\9\49\7\22\22\11\12\5\17\96\109\98\98\98\50\10\27\17\11\1\17\49\7\22\22\11\12\5\17\96\107\98\98\98\1\13\16\13\23\22\11\12\7\96\100\98\98\98\1\16\7\3\22\7\96\100\98\98\98\16\7\17\23\15\7\96\101\98\98\98\50\10\27\17\11\1\17\96\104\98\98\98\35\14\14\13\21\49\14\7\7\18\98\98\96\103\98\98\98\17\18\3\21\12\96\104\98\98\98\48\23\12\49\7\16\20\11\1\7\96\111\98\98\98\48\7\12\6\7\16\49\22\7\18\18\7\6\96\101\98\98\98\33\13\12\12\7\1\22\96\104\98\98\98\49\22\3\16\22\7\16\37\23\11\96\101\98\98\98\49\7\22\33\13\16\7\96\114\98\98\98\49\7\12\6\44\13\22\11\4\11\1\3\22\11\13\12\96\103\98\98\98\54\11\22\14\7\96\110\98\98\98\44\7\22\66\32\27\18\3\17\17\7\6\96\102\98\98\98\54\7\26\22\96\98\98\98\98\96\102\98\98\98\43\1\13\12\96\106\98\98\98\38\23\16\3\22\11\13\12\99\98\98\98\98\98\98\34\34\96\106\98\98\98\33\3\14\14\0\3\1\9\96\114\98\98\98\0\11\12\6\3\0\14\7\36\23\12\1\22\11\13\12\38\98\98\98\99\98\98\98\99\98\98\98\99\98\98\98\99\98\98\98\96\98\98\98\97\98\98\98\97\98\98\98\102\98\98\98\102\98\98\98\102\98\98\98\103\98\98\98\103\98\98\98\103\98\98\98\100\98\98\98\100\98\98\98\107\98\98\98\100\98\98\98\104\98\98\98\104\98\98\98\104\98\98\98\104\98\98\98\105\98\98\98\105\98\98\98\105\98\98\98\105\98\98\98\110\98\98\98\110\98\98\98\109\98\98\98\110\98\98\98\114\98\98\98\114\98\98\98\114\98\98\98\114\98\98\98\115\98\98\98\115\98\98\98\122\98\98\98\115\98\98\98\123\98\98\98\123\98\98\98\123\98\98\98\123\98\98\98\120\98\98\98\67\98\98\98\120\98\98\98\64\98\98\98\64\98\98\98\64\98\98\98\64\98\98\98\64\98\98\98\64\98\98\98\70\98\98\98\64\98\98\98\71\98\98\98\78\98\98\98\71\98\98\98\79\98\98\98\79\98\98\98\79\98\98\98\79\98\98\98\79\98\98\98\76\98\98\98\77\98\98\98\82\98\98\98\83\98\98\98\80\98\98\98\80\98\98\98\79\98\98\98\81\98\98\98\38\98\98\98\112\69\98\98\98\99\98\98\98\66\98\98\98\98\98\98\96\98\112\98\98\96\98\97\98\98\98\98\98\98\98\98\96\98\96\98\66\98\98\99\98\98\98\102\98\112\98\98\96\98\103\98\98\98\98\98\98\96\98\99\98\96\98\66\98\98\97\98\96\98\96\98\112\98\98\103\98\100\98\98\98\98\98\98\97\98\103\98\96\98\66\74\98\102\98\96\98\96\98\112\67\98\100\98\101\98\98\98\98\108\98\102\98\100\98\96\98\112\97\98\103\98\106\98\98\98\66\127\98\103\98\103\98\107\98\96\105\98\100\98\98\98\98\98\98\71\98\103\98\96\98\96\98\112\98\98\100\98\106\98\98\98\66\98\98\100\98\100\98\104\98\98\98\98\101\98\103\98\98\98\98\98\98\100\98\96\98\99\98\112\98\98\100\98\103\98\98\98\98\104\98\100\98\99\98\96\98\66\127\98\100\98\100\98\105\98\82\70\98\100\98\110\98\111\98\112\97\98\100\98\106\98\98\98\66\127\98\100\98\100\98\107\98\96\105\98\101\98\99\98\98\98\98\71\98\100\98\96\98\96\98\112\98\98\101\98\106\98\98\98\66\98\98\101\98\101\98\104\98\98\98\98\106\98\100\98\98\98\98\98\98\101\98\96\98\99\98\112\98\98\101\98\106\98\98\98\66\127\98\101\98\101\98\107\98\96\105\98\106\98\96\98\98\98\98\71\98\101\98\96\98\96\98\112\98\98\106\98\106\98\98\98\66\98\98\106\98\106\98\104\98\98\98\98\107\98\101\98\98\98\98\98\98\106\98\96\98\99\98\112\98\98\106\98\108\98\98\98\96\105\98\107\98\97\98\98\98\98\120\98\106\98\96\98\99\98\112\98\98\106\98\99\98\98\98\66\98\98\106\98\106\98\96\98\112\98\98\104\98\109\98\98\98\98\98\98\106\98\104\98\96\98\66\98\98\106\98\106\98\114\98\66\98\98\106\98\106\98\115\98\96\105\98\104\98\102\98\98\98\98\112\98\106\98\104\98\99\98\112\97\98\106\98\108\98\98\98\96\105\98\107\98\103\98\98\98\98\115\98\106\98\96\98\99\98\112\98\98\106\98\99\98\98\98\66\98\98\106\98\106\98\112\98\66\98\98\106\98\106\98\113\98\112\98\98\104\98\118\98\98\98\98\98\98\105\98\98\98\103\98\82\98\98\105\98\119\98\116\98\82\98\98\105\98\117\98\122\98\82\98\98\105\98\123\98\122\98\82\98\98\105\98\120\98\121\98\112\97\98\110\98\127\98\98\98\114\111\98\105\98\126\98\110\98\98\112\98\106\98\105\98\99\98\98\116\98\98\98\99\98\98\98\98\100\98\98\98\104\98\98\98\96\102\98\98\98\5\3\15\7\96\104\98\98\98\37\7\22\49\7\16\20\11\1\7\96\104\98\98\98\48\23\12\49\7\16\20\11\1\7\96\111\98\98\98\48\7\12\6\7\16\49\22\7\18\18\7\6\96\102\98\98\98\53\3\11\22\96\101\98\98\98\50\14\3\27\7\16\17\96\105\98\98\98\46\13\1\3\14\50\14\3\27\7\16\96\117\98\98\98\47\3\26\11\15\23\15\49\11\15\23\14\3\22\11\13\12\48\3\6\11\23\17\99\157\103\197\109\141\98\178\11\96\114\98\98\98\49\11\15\23\14\3\22\11\13\12\48\3\6\11\23\17\119\98\98\98\101\98\98\98\101\98\98\98\101\98\98\98\101\98\98\98\101\98\98\98\101\98\98\98\101\98\98\98\106\98\98\98\106\98\98\98\106\98\98\98\106\98\98\98\106\98\98\98\106\98\98\98\107\98\98\98\107\98\98\98\107\98\98\98\107\98\98\98\107\98\98\98\107\98\98\98\107\98\98\98\107\98\98\98\119\98\98\98\112\97\98\98\98\99\98\98\98\66\100\98\98\98\98\98\96\98\112\98\98\96\98\97\98\98\98\98\98\98\98\98\96\98\96\98\66\98\98\98\98\98\98\102\98\66\98\98\98\98\98\98\103\98\98\98\98\98\98\96\98\99\98\112\98\98\98\98\99\98\98\98\66\98\98\98\98\98\98\96\98\112\98\98\96\98\100\98\98\98\98\98\98\98\98\96\98\96\98\66\98\98\98\98\98\98\101\98\82\98\98\98\98\106\98\107\98\112\98\98\98\98\99\98\98\98\66\98\98\98\98\98\98\96\98\112\98\98\96\98\100\98\98\98\98\98\98\98\98\96\98\96\98\66\98\98\98\98\98\98\101\98\82\98\98\98\98\104\98\107\98\102\98\98\98\98\98\98\99\98\98\116\98\98\98\99\98\98\98\98\98\98\98\98\110\98\98\98\96\102\98\98\98\5\3\15\7\96\104\98\98\98\37\7\22\49\7\16\20\11\1\7\96\104\98\98\98\48\23\12\49\7\16\20\11\1\7\96\101\98\98\98\49\22\7\18\18\7\6\96\102\98\98\98\53\3\11\22\96\101\98\98\98\50\14\3\27\7\16\17\96\105\98\98\98\46\13\1\3\14\50\14\3\27\7\16\96\117\98\98\98\47\3\26\11\15\23\15\49\11\15\23\14\3\22\11\13\12\48\3\6\11\23\17\96\102\98\98\98\15\3\22\10\96\97\98\98\98\18\13\21\96\102\98\98\98\10\23\5\7\96\114\98\98\98\49\11\15\23\14\3\22\11\13\12\48\3\6\11\23\17\67\98\98\98\111\98\98\98\111\98\98\98\111\98\98\98\111\98\98\98\111\98\98\98\111\98\98\98\111\98\98\98\108\98\98\98\108\98\98\98\108\98\98\98\108\98\98\98\108\98\98\98\108\98\98\98\108\98\98\98\108\98\98\98\108\98\98\98\108\98\98\98\108\98\98\98\108\98\98\98\108\98\98\98\109\98\98\98\109\98\98\98\109\98\98\98\109\98\98\98\109\98\98\98\109\98\98\98\109\98\98\98\109\98\98\98\109\98\98\98\109\98\98\98\109\98\98\98\109\98\98\98\109\98\98\98\67\98\98\98\112\97\98\98\98\99\98\98\98\66\79\98\98\98\98\98\96\98\112\98\98\96\98\97\98\98\98\98\98\98\98\98\96\98\96\98\66\98\98\98\98\98\98\102\98\66\98\98\98\98\98\98\103\98\98\98\98\98\98\96\98\99\98\112\98\98\98\98\99\98\98\98\66\98\98\98\98\98\98\96\98\112\98\98\96\98\100\98\98\98\98\98\98\98\98\96\98\96\98\66\98\98\98\98\98\98\101\98\112\98\98\99\98\107\98\98\98\66\98\98\99\98\99\98\104\98\112\98\98\96\98\107\98\98\98\66\98\98\96\98\96\98\105\98\112\98\98\97\98\107\98\98\98\66\98\98\97\98\97\98\105\98\98\98\98\99\98\97\98\96\98\114\98\98\98\98\106\98\99\98\112\98\98\98\98\99\98\98\98\66\98\98\98\98\98\98\96\98\112\98\98\96\98\100\98\98\98\98\98\98\98\98\96\98\96\98\66\98\98\98\98\98\98\101\98\112\98\98\99\98\107\98\98\98\66\98\98\99\98\99\98\105\98\112\98\98\96\98\107\98\98\98\66\98\98\96\98\96\98\105\98\98\98\98\99\98\99\98\96\98\114\98\98\98\98\110\98\99\98\102\98\98\98\98\98\98\99\98\98\116\98\98\98\99\98\98\98\98\98\98\98\98\109\98\98\98\96\102\98\98\98\5\3\15\7\96\104\98\98\98\37\7\22\49\7\16\20\11\1\7\96\104\98\98\98\48\23\12\49\7\16\20\11\1\7\96\107\98\98\98\42\7\3\16\22\0\7\3\22\96\102\98\98\98\53\3\11\22\96\106\98\98\98\17\7\22\22\11\12\5\17\96\101\98\98\98\50\10\27\17\11\1\17\96\104\98\98\98\35\14\14\13\21\49\14\7\7\18\98\98\96\115\98\98\98\17\7\22\10\11\6\6\7\12\18\16\13\18\7\16\22\27\96\101\98\98\98\50\14\3\27\7\16\17\96\105\98\98\98\46\13\1\3\14\50\14\3\27\7\16\96\117\98\98\98\47\3\26\11\15\23\15\49\11\15\23\14\3\22\11\13\12\48\3\6\11\23\17\99\157\103\197\109\141\98\178\11\96\114\98\98\98\49\11\15\23\14\3\22\11\13\12\48\3\6\11\23\17\121\98\98\98\113\98\98\98\113\98\98\98\113\98\98\98\113\98\98\98\113\98\98\98\113\98\98\98\113\98\98\98\118\98\98\98\118\98\98\98\118\98\98\98\118\98\98\98\119\98\98\98\119\98\98\98\119\98\98\98\119\98\98\98\119\98\98\98\119\98\98\98\119\98\98\98\116\98\98\98\116\98\98\98\116\98\98\98\116\98\98\98\116\98\98\98\116\98\98\98\116\98\98\98\116\98\98\98\122\98\98\98\121\98\98\98\112\97\98\98\98\99\98\98\98\66\64\98\98\98\98\98\96\98\112\98\98\96\98\97\98\98\98\98\98\98\98\98\96\98\96\98\66\98\98\98\98\98\98\102\98\66\98\98\98\98\98\98\103\98\98\98\98\98\98\96\98\99\98\112\98\98\98\98\100\98\98\98\98\98\98\98\98\99\98\96\98\66\98\98\98\98\98\98\101\98\82\98\98\98\98\106\98\107\98\112\98\98\98\98\104\98\98\98\112\98\98\99\98\99\98\98\98\66\98\98\99\98\99\98\105\98\66\98\98\99\98\99\98\110\98\112\98\98\96\98\111\98\98\98\112\98\98\97\98\108\98\98\98\98\98\98\98\98\97\98\99\98\112\98\98\98\98\104\98\98\98\112\98\98\99\98\99\98\98\98\66\98\98\99\98\99\98\105\98\66\98\98\99\98\99\98\110\98\112\98\98\96\98\109\98\98\98\112\98\98\97\98\108\98\98\98\98\98\98\98\98\97\98\99\98\102\98\98\98\98\98\98\99\98\98\116\98\98\98\99\98\98\98\98\98\98\98\98\115\98\98\98\96\106\98\98\98\17\7\22\22\11\12\5\17\96\101\98\98\98\50\10\27\17\11\1\17\96\104\98\98\98\35\14\14\13\21\49\14\7\7\18\98\98\96\115\98\98\98\17\7\22\10\11\6\6\7\12\18\16\13\18\7\16\22\27\96\102\98\98\98\5\3\15\7\96\101\98\98\98\50\14\3\27\7\16\17\96\105\98\98\98\46\13\1\3\14\50\14\3\27\7\16\96\117\98\98\98\47\3\26\11\15\23\15\49\11\15\23\14\3\22\11\13\12\48\3\6\11\23\17\96\102\98\98\98\15\3\22\10\96\97\98\98\98\18\13\21\96\102\98\98\98\10\23\5\7\96\114\98\98\98\49\11\15\23\14\3\22\11\13\12\48\3\6\11\23\17\96\104\98\98\98\37\7\22\49\7\16\20\11\1\7\96\104\98\98\98\48\23\12\49\7\16\20\11\1\7\96\101\98\98\98\49\22\7\18\18\7\6\96\102\98\98\98\21\3\11\22\79\98\98\98\126\98\98\98\126\98\98\98\126\98\98\98\126\98\98\98\127\98\98\98\127\98\98\98\127\98\98\98\127\98\98\98\127\98\98\98\127\98\98\98\127\98\98\98\127\98\98\98\127\98\98\98\127\98\98\98\127\98\98\98\127\98\98\98\127\98\98\98\127\98\98\98\127\98\98\98\127\98\98\98\124\98\98\98\124\98\98\98\124\98\98\98\124\98\98\98\124\98\98\98\124\98\98\98\124\98\98\98\124\98\98\98\124\98\98\98\124\98\98\98\124\98\98\98\124\98\98\98\124\98\98\98\124\98\98\98\124\98\98\98\124\98\98\98\125\98\98\98\125\98\98\98\125\98\98\98\125\98\98\98\125\98\98\98\125\98\98\98\125\98\98\98\125\98\98\98\67\98\98\98\79\98\98\98\112\97\98\98\98\99\98\98\98\98\72\98\98\98\99\98\96\98\66\98\98\98\98\98\98\96\98\82\98\98\98\98\97\98\102\98\112\98\98\98\98\103\98\98\98\112\98\98\99\98\100\98\98\98\66\98\98\99\98\99\98\101\98\66\98\98\99\98\99\98\106\98\112\98\98\96\98\107\98\98\98\112\98\98\97\98\104\98\98\98\66\98\98\97\98\97\98\105\98\112\98\98\102\98\104\98\98\98\66\98\98\102\98\102\98\110\98\112\98\98\103\98\104\98\98\98\66\98\98\103\98\103\98\110\98\98\98\98\97\98\103\98\96\98\112\98\98\102\98\104\98\98\98\66\98\98\102\98\102\98\110\98\98\98\98\97\98\97\98\102\98\98\98\98\98\98\97\98\99\98\112\98\98\98\98\103\98\98\98\112\98\98\99\98\100\98\98\98\66\98\98\99\98\99\98\101\98\66\98\98\99\98\99\98\106\98\112\98\98\96\98\111\98\98\98\112\98\98\97\98\104\98\98\98\66\98\98\97\98\97\98\105\98\112\98\98\102\98\104\98\98\98\66\98\98\102\98\102\98\110\98\112\98\98\103\98\104\98\98\98\66\98\98\103\98\103\98\110\98\98\98\98\97\98\103\98\96\98\112\98\98\102\98\104\98\98\98\66\98\98\102\98\102\98\110\98\98\98\98\97\98\97\98\102\98\98\98\98\98\98\97\98\99\98\112\98\98\98\98\100\98\98\98\66\98\98\98\98\98\98\108\98\112\98\98\96\98\109\98\98\98\98\98\98\98\98\96\98\96\98\66\98\98\98\98\98\98\114\98\66\98\98\98\98\98\98\115\98\98\98\98\98\98\96\98\99\98\102\98\98\98\98\98\98\99\98\98\116\98\98\98\99\98\98\98\98\98\98\98\98\97\98\98\98\96\113\98\98\98\17\7\22\17\11\15\23\14\3\22\11\13\12\16\3\6\11\23\17\96\102\98\98\98\15\3\22\10\96\102\98\98\98\10\23\5\7\103\98\98\98\65\98\98\98\65\98\98\98\65\98\98\98\65\98\98\98\70\98\98\98\103\98\98\98\112\65\98\98\98\99\98\98\98\112\98\98\99\98\96\98\98\98\66\98\98\99\98\99\98\97\98\98\98\98\98\98\96\98\99\98\98\98\98\98\98\99\98\98\98\98\98\98\98\98\108\98\98\98\96\106\98\98\98\17\7\22\22\11\12\5\17\96\101\98\98\98\50\10\27\17\11\1\17\96\104\98\98\98\35\14\14\13\21\49\14\7\7\18\98\98\96\115\98\98\98\17\7\22\10\11\6\6\7\12\18\16\13\18\7\16\22\27\96\102\98\98\98\5\3\15\7\96\101\98\98\98\50\14\3\27\7\16\17\96\105\98\98\98\46\13\1\3\14\50\14\3\27\7\16\96\117\98\98\98\47\3\26\11\15\23\15\49\11\15\23\14\3\22\11\13\12\48\3\6\11\23\17\99\148\157\157\253\83\254\233\36\96\104\98\98\98\37\7\22\49\7\16\20\11\1\7\96\104\98\98\98\48\23\12\49\7\16\20\11\1\7\96\101\98\98\98\49\22\7\18\18\7\6\96\102\98\98\98\21\3\11\22\121\98\98\98\69\98\98\98\69\98\98\98\69\98\98\98\69\98\98\98\74\98\98\98\74\98\98\98\74\98\98\98\74\98\98\98\74\98\98\98\74\98\98\98\74\98\98\98\75\98\98\98\75\98\98\98\75\98\98\98\75\98\98\98\75\98\98\98\75\98\98\98\75\98\98\98\72\98\98\98\72\98\98\98\72\98\98\98\72\98\98\98\72\98\98\98\72\98\98\98\72\98\98\98\72\98\98\98\78\98\98\98\121\98\98\98\112\97\98\98\98\99\98\98\98\98\117\98\98\98\99\98\96\98\66\98\98\98\98\98\98\96\98\82\98\98\98\98\97\98\102\98\112\98\98\98\98\103\98\98\98\112\98\98\99\98\100\98\98\98\66\98\98\99\98\99\98\101\98\66\98\98\99\98\99\98\106\98\112\98\98\96\98\107\98\98\98\112\98\98\97\98\104\98\98\98\98\98\98\98\98\97\98\99\98\112\98\98\98\98\103\98\98\98\112\98\98\99\98\100\98\98\98\66\98\98\99\98\99\98\101\98\66\98\98\99\98\99\98\106\98\112\98\98\96\98\107\98\98\98\112\98\98\97\98\104\98\98\98\98\98\98\98\98\97\98\99\98\112\98\98\98\98\100\98\98\98\66\98\98\98\98\98\98\105\98\112\98\98\96\98\110\98\98\98\98\98\98\98\98\96\98\96\98\66\98\98\98\98\98\98\111\98\66\98\98\98\98\98\98\108\98\98\98\98\98\98\96\98\99\98\102\98\98\98\98\98\98\99\98\98\116\98\98\98\99\98\98\98\98\98\98\98\98';local lIIIllIllllIIl=(bit or bit32);local lllIIIIIIlIIIIIIlIIIIIlI=lIIIllIllllIIl and lIIIllIllllIIl.bxor or function(lIIIllIllllIIl,llllllIlI)local IlIIIllIIIlIll,lllIIIIIIlIIIIIIlIIIIIlI,lllIllIll=1,0,10 while lIIIllIllllIIl>0 and llllllIlI>0 do local lIIIlIllIIllllIlIl,lllIllIll=lIIIllIllllIIl%2,llllllIlI%2 if lIIIlIllIIllllIlIl~=lllIllIll then lllIIIIIIlIIIIIIlIIIIIlI=lllIIIIIIlIIIIIIlIIIIIlI+IlIIIllIIIlIll end lIIIllIllllIIl,llllllIlI,IlIIIllIIIlIll=(lIIIllIllllIIl-lIIIlIllIIllllIlIl)/2,(llllllIlI-lllIllIll)/2,IlIIIllIIIlIll*2 end if lIIIllIllllIIl<llllllIlI then lIIIllIllllIIl=llllllIlI end while lIIIllIllllIIl>0 do local llllllIlI=lIIIllIllllIIl%2 if llllllIlI>0 then lllIIIIIIlIIIIIIlIIIIIlI=lllIIIIIIlIIIIIIlIIIIIlI+IlIIIllIIIlIll end lIIIllIllllIIl,IlIIIllIIIlIll=(lIIIllIllllIIl-llllllIlI)/2,IlIIIllIIIlIll*2 end return lllIIIIIIlIIIIIIlIIIIIlI end local function IlIIIllIIIlIll(IlIIIllIIIlIll,lIIIllIllllIIl,llllllIlI)if llllllIlI then local lIIIllIllllIIl=(IlIIIllIIIlIll/2^(lIIIllIllllIIl-1))%2^((llllllIlI-1)-(lIIIllIllllIIl-1)+1);return lIIIllIllllIIl-lIIIllIllllIIl%1;else local lIIIllIllllIIl=2^(lIIIllIllllIIl-1);return(IlIIIllIIIlIll%(lIIIllIllllIIl+lIIIllIllllIIl)>=lIIIllIllllIIl)and 1 or 0;end;end;local lIIIllIllllIIl=1;local function llllllIlI()local lllIllIll,lIIIlIllIIllllIlIl,llllllIlI,IlIIIllIIIlIll=lIIIlIllIIllllIlIl(IllIIIIIlIllIIlllIllIIl,lIIIllIllllIIl,lIIIllIllllIIl+3);lllIllIll=lllIIIIIIlIIIIIIlIIIIIlI(lllIllIll,98)lIIIlIllIIllllIlIl=lllIIIIIIlIIIIIIlIIIIIlI(lIIIlIllIIllllIlIl,98)llllllIlI=lllIIIIIIlIIIIIIlIIIIIlI(llllllIlI,98)IlIIIllIIIlIll=lllIIIIIIlIIIIIIlIIIIIlI(IlIIIllIIIlIll,98)lIIIllIllllIIl=lIIIllIllllIIl+4;return(IlIIIllIIIlIll*16777216)+(llllllIlI*65536)+(lIIIlIllIIllllIlIl*256)+lllIllIll;end;local function IIlIlIIIlIllIlIlllIIIlII()local llllllIlI=lllIIIIIIlIIIIIIlIIIIIlI(lIIIlIllIIllllIlIl(IllIIIIIlIllIIlllIllIIl,lIIIllIllllIIl,lIIIllIllllIIl),98);lIIIllIllllIIl=lIIIllIllllIIl+1;return llllllIlI;end;local function lllIllIll()local llllllIlI,IlIIIllIIIlIll=lIIIlIllIIllllIlIl(IllIIIIIlIllIIlllIllIIl,lIIIllIllllIIl,lIIIllIllllIIl+2);llllllIlI=lllIIIIIIlIIIIIIlIIIIIlI(llllllIlI,98)IlIIIllIIIlIll=lllIIIIIIlIIIIIIlIIIIIlI(IlIIIllIIIlIll,98)lIIIllIllllIIl=lIIIllIllllIIl+2;return(IlIIIllIIIlIll*256)+llllllIlI;end;local function IlIlIIIIlIIIIIlIIlllI()local lllIIIIIIlIIIIIIlIIIIIlI=llllllIlI();local lIIIllIllllIIl=llllllIlI();local lllIllIll=1;local lllIIIIIIlIIIIIIlIIIIIlI=(IlIIIllIIIlIll(lIIIllIllllIIl,1,20)*(2^32))+lllIIIIIIlIIIIIIlIIIIIlI;local llllllIlI=IlIIIllIIIlIll(lIIIllIllllIIl,21,31);local lIIIllIllllIIl=((-1)^IlIIIllIIIlIll(lIIIllIllllIIl,32));if(llllllIlI==0)then if(lllIIIIIIlIIIIIIlIIIIIlI==0)then return lIIIllIllllIIl*0;else llllllIlI=1;lllIllIll=0;end;elseif(llllllIlI==2047)then return(lllIIIIIIlIIIIIIlIIIIIlI==0)and(lIIIllIllllIIl*(1/0))or(lIIIllIllllIIl*(0/0));end;return IllIllIIlllIIllllllI(lIIIllIllllIIl,llllllIlI-1023)*(lllIllIll+(lllIIIIIIlIIIIIIlIIIIIlI/(2^52)));end;local llIlIIlIlIIlllII=llllllIlI;local function IllIllIIlllIIllllllI(llllllIlI)local IlIIIllIIIlIll;if(not llllllIlI)then llllllIlI=llIlIIlIlIIlllII();if(llllllIlI==0)then return'';end;end;IlIIIllIIIlIll=lIlIIIlI(IllIIIIIlIllIIlllIllIIl,lIIIllIllllIIl,lIIIllIllllIIl+llllllIlI-1);lIIIllIllllIIl=lIIIllIllllIIl+llllllIlI;local llllllIlI={}for lIIIllIllllIIl=1,#IlIIIllIIIlIll do llllllIlI[lIIIllIllllIIl]=IlIllIllIllIllll(lllIIIIIIlIIIIIIlIIIIIlI(lIIIlIllIIllllIlIl(lIlIIIlI(IlIIIllIIIlIll,lIIIllIllllIIl,lIIIllIllllIIl)),98))end return IlIlllIlllIIlIIlIlIIllI(llllllIlI);end;local lIIIllIllllIIl=llllllIlI;local function IlIlllIlllIIlIIlIlIIllI(...)return{...},IllIlIlIIIlIIIIlll('#',...)end local function IlIllIllIllIllll()local IllIIIIIlIllIIlllIllIIl={};local lIlIIIlI={};local lIIIlIllIIllllIlIl={};local IlIlllIlllIIlIIlIlIIllI={[#{{726;496;162;280};{70;56;466;976};}]=lIlIIIlI,[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}]=nil,[#{"1 + 1 = 111";{695;153;65;413};"1 + 1 = 111";"1 + 1 = 111";}]=lIIIlIllIIllllIlIl,[#{{613;50;232;379};}]=IllIIIIIlIllIIlllIllIIl,};local lIIIllIllllIIl=llllllIlI()local lllIIIIIIlIIIIIIlIIIIIlI={}for IlIIIllIIIlIll=1,lIIIllIllllIIl do local llllllIlI=IIlIlIIIlIllIlIlllIIIlII();local lIIIllIllllIIl;if(llllllIlI==0)then lIIIllIllllIIl=(IIlIlIIIlIllIlIlllIIIlII()~=0);elseif(llllllIlI==1)then lIIIllIllllIIl=IlIlIIIIlIIIIIlIIlllI();elseif(llllllIlI==2)then lIIIllIllllIIl=IllIllIIlllIIllllllI();end;lllIIIIIIlIIIIIIlIIIIIlI[IlIIIllIIIlIll]=lIIIllIllllIIl;end;for lIIIllIllllIIl=1,llllllIlI()do lIIIlIllIIllllIlIl[lIIIllIllllIIl]=llllllIlI();end;for lIlIIIlI=1,llllllIlI()do local lIIIllIllllIIl=IIlIlIIIlIllIlIlllIIIlII();if(IlIIIllIIIlIll(lIIIllIllllIIl,1,1)==0)then local lIIIlIllIIllllIlIl=IlIIIllIIIlIll(lIIIllIllllIIl,2,3);local lIIllllIIlIIIllII=IlIIIllIIIlIll(lIIIllIllllIIl,4,6);local lIIIllIllllIIl={lllIllIll(),lllIllIll(),nil,nil};if(lIIIlIllIIllllIlIl==0)then lIIIllIllllIIl[#("z7X")]=lllIllIll();lIIIllIllllIIl[#("iJiy")]=lllIllIll();elseif(lIIIlIllIIllllIlIl==1)then lIIIllIllllIIl[#("v8z")]=llllllIlI();elseif(lIIIlIllIIllllIlIl==2)then lIIIllIllllIIl[#("agB")]=llllllIlI()-(2^16)elseif(lIIIlIllIIllllIlIl==3)then lIIIllIllllIIl[#{{811;385;119;260};"1 + 1 = 111";{816;519;419;232};}]=llllllIlI()-(2^16)lIIIllIllllIIl[#("SzxV")]=lllIllIll();end;if(IlIIIllIIIlIll(lIIllllIIlIIIllII,1,1)==1)then lIIIllIllllIIl[#("SF")]=lllIIIIIIlIIIIIIlIIIIIlI[lIIIllIllllIIl[#("Mb")]]end if(IlIIIllIIIlIll(lIIllllIIlIIIllII,2,2)==1)then lIIIllIllllIIl[#("PQ5")]=lllIIIIIIlIIIIIIlIIIIIlI[lIIIllIllllIIl[#("O4u")]]end if(IlIIIllIIIlIll(lIIllllIIlIIIllII,3,3)==1)then lIIIllIllllIIl[#("PtQR")]=lllIIIIIIlIIIIIIlIIIIIlI[lIIIllIllllIIl[#("JdnC")]]end IllIIIIIlIllIIlllIllIIl[lIlIIIlI]=lIIIllIllllIIl;end end;IlIlllIlllIIlIIlIlIIllI[3]=IIlIlIIIlIllIlIlllIIIlII();for lIIIllIllllIIl=1,llllllIlI()do lIlIIIlI[lIIIllIllllIIl-1]=IlIllIllIllIllll();end;return IlIlllIlllIIlIIlIlIIllI;end;local IllIllIIlllIIllllllI=pcall local function lIlIIIlI(IllIIIIIlIllIIlllIllIIl,lIIIllIllllIIl,lllIllIll)IllIIIIIlIllIIlllIllIIl=(IllIIIIIlIllIIlllIllIIl==true and IlIllIllIllIllll())or IllIIIIIlIllIIlllIllIIl;return(function(...)local llllllIlI=1;local lIIIllIllllIIl=-1;local IIlIlIIIlIllIlIlllIIIlII={...};local IllIlIlIIIlIIIIlll=IllIlIlIIIlIIIIlll('#',...)-1;local lllIIIIIIlIIIIIIlIIIIIlI=IllIIIIIlIllIIlllIllIIl[#{"1 + 1 = 111";}];local lIIIlIllIIllllIlIl=IllIIIIIlIllIIlllIllIIl[#{"1 + 1 = 111";{365;320;808;12};"1 + 1 = 111";}];local IlIllIllIllIllll=IllIIIIIlIllIIlllIllIIl[#{{597;647;644;703};{120;181;133;578};}];local function IllllIlIIIllIIIIIIIl()local lIIIllIllllIIl=IlIlllIlllIIlIIlIlIIllI local IllIIIIIlIllIIlllIllIIl={};local lIIIllIllllIIl={};local IlIIIllIIIlIll={};for lIIIllIllllIIl=0,IllIlIlIIIlIIIIlll do if(lIIIllIllllIIl>=lIIIlIllIIllllIlIl)then IllIIIIIlIllIIlllIllIIl[lIIIllIllllIIl-lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl+1];else IlIIIllIIIlIll[lIIIllIllllIIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl+1];end;end;local lIIIllIllllIIl=IllIlIlIIIlIIIIlll-lIIIlIllIIllllIlIl+1 local lIIIllIllllIIl;local lIIIlIllIIllllIlIl;while true do lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("m")];if lIIIlIllIIllllIlIl<=#("ekGW4zDbjFnBs3sDzC4xNq")then if lIIIlIllIIllllIlIl<=#("PtNIE64sfH")then if lIIIlIllIIllllIlIl<=#("pTsC")then if lIIIlIllIIllllIlIl<=#("u")then if lIIIlIllIIllllIlIl==#("")then IlIIIllIIIlIll[lIIIllIllllIIl[#("28")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("NeE")]][lIIIllIllllIIl[#("CyEY")]];else local llllllIlI=lIIIllIllllIIl[#("Gf")]IlIIIllIIIlIll[llllllIlI]=IlIIIllIIIlIll[llllllIlI](lIIllllIIlIIIllII(IlIIIllIIIlIll,llllllIlI+1,lIIIllIllllIIl[#("K6E")]))end;elseif lIIIlIllIIllllIlIl<=#("lB")then IlIIIllIIIlIll[lIIIllIllllIIl[#("rs")]]=lIlIIIlI(IlIllIllIllIllll[lIIIllIllllIIl[#("XJF")]],nil,lllIllIll);elseif lIIIlIllIIllllIlIl>#("jC7")then local lIIIllIllllIIl=lIIIllIllllIIl[#("qH")]IlIIIllIIIlIll[lIIIllIllllIIl]=IlIIIllIIIlIll[lIIIllIllllIIl](IlIIIllIIIlIll[lIIIllIllllIIl+1])else IlIIIllIIIlIll[lIIIllIllllIIl[#("Me")]]=lllIllIll[lIIIllIllllIIl[#("gns")]];end;elseif lIIIlIllIIllllIlIl<=#("6bhCovX")then if lIIIlIllIIllllIlIl<=#("0Dr18")then IlIIIllIIIlIll[lIIIllIllllIIl[#("Vo")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("p2e")]];elseif lIIIlIllIIllllIlIl>#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";{522;980;208;192};{692;184;43;531};"1 + 1 = 111";}then IlIIIllIIIlIll[lIIIllIllllIIl[#("m3")]][lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}]]=lIIIllIllllIIl[#("VAET")];else local IIlIlIIIlIllIlIlllIIIlII;local lIIIlIllIIllllIlIl;lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("G7")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("bMr")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("0Ssx")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("bG")]]=lIIIllIllllIIl[#("Ojh")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("Pe")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("MPe")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("4Y")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("Fcd")]][lIIIllIllllIIl[#("Hv2I")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("CE")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("hWsv")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("Yu")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1])llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("ny")]]=lllIllIll[lIIIllIllllIIl[#("6Z2")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("ba")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("yUf")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("lFQ0")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("RV")]]=lIIIllIllllIIl[#("0tH")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("u6")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("IFu")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("VA")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("PqE")]][lIIIllIllllIIl[#("vCoQ")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Hx")]][lIIIllIllllIIl[#("CaI")]]=lIIIllIllllIIl[#("Uft5")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#{{164;655;904;551};"1 + 1 = 111";}]]=lllIllIll[lIIIllIllllIIl[#("jaQ")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("iM")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("Y9z")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("r4Nq")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Rx")]]=lIIIllIllllIIl[#("lkb")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("1k")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("TZZ")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("37")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("evO")]][lIIIllIllllIIl[#("6at1")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Z9")]][lIIIllIllllIIl[#("h0T")]]=lIIIllIllllIIl[#("mlP6")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];llllllIlI=lIIIllIllllIIl[#("RfA")];end;elseif lIIIlIllIIllllIlIl<=#("j69JHUf7")then IlIIIllIIIlIll[lIIIllIllllIIl[#("GF")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("ZK2")]]*IlIIIllIIIlIll[lIIIllIllllIIl[#("Peh9")]];elseif lIIIlIllIIllllIlIl==#("klKva2kOs")then local lIIIllIllllIIl=lIIIllIllllIIl[#("Jt")]IlIIIllIIIlIll[lIIIllIllllIIl](IlIIIllIIIlIll[lIIIllIllllIIl+1])else local lIIIllIllllIIl=lIIIllIllllIIl[#("su")]IlIIIllIIIlIll[lIIIllIllllIIl]=IlIIIllIIIlIll[lIIIllIllllIIl]()end;elseif lIIIlIllIIllllIlIl<=#("D6C9lE1Y6o0pVuHW")then if lIIIlIllIIllllIlIl<=#{"1 + 1 = 111";{274;725;357;122};{190;438;553;795};"1 + 1 = 111";{558;150;698;689};{914;434;753;320};"1 + 1 = 111";"1 + 1 = 111";{162;198;508;777};"1 + 1 = 111";"1 + 1 = 111";{724;53;293;922};"1 + 1 = 111";}then if lIIIlIllIIllllIlIl<=#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";{108;447;687;977};{109;788;414;566};{460;358;160;179};{939;881;598;109};{173;730;191;142};{546;14;954;862};}then IlIIIllIIIlIll[lIIIllIllllIIl[#("Hj")]]=lIlIIIlI(IlIllIllIllIllll[lIIIllIllllIIl[#("rAs")]],nil,lllIllIll);elseif lIIIlIllIIllllIlIl==#("S14BpZoXcVLO")then local lIIIllIllllIIl=lIIIllIllllIIl[#("p4")]IlIIIllIIIlIll[lIIIllIllllIIl]=IlIIIllIIIlIll[lIIIllIllllIIl]()else IlIIIllIIIlIll[lIIIllIllllIIl[#("HZ")]][lIIIllIllllIIl[#("e26")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("pTOF")]];end;elseif lIIIlIllIIllllIlIl<=#("grRgnoUKnxOtk4")then local llllllIlI=lIIIllIllllIIl[#("vf")]IlIIIllIIIlIll[llllllIlI]=IlIIIllIIIlIll[llllllIlI](lIIllllIIlIIIllII(IlIIIllIIIlIll,llllllIlI+1,lIIIllIllllIIl[#("4oc")]))elseif lIIIlIllIIllllIlIl>#{"1 + 1 = 111";"1 + 1 = 111";{619;667;261;460};{460;145;942;655};{705;255;435;979};"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";{53;354;477;851};{372;198;210;135};{167;364;55;112};{82;786;253;937};"1 + 1 = 111";{523;391;147;754};}then IlIIIllIIIlIll[lIIIllIllllIIl[#("6t")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("Eio")]];else do return end;end;elseif lIIIlIllIIllllIlIl<=#("aWzGApR1BlJFEqgf4kP")then if lIIIlIllIIllllIlIl<=#("7I9n99tBmB4boONHV")then local lIIllllIIlIIIllII;local lIIIlIllIIllllIlIl;lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("50")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1])llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("HB")]]=lllIllIll[lIIIllIllllIIl[#("CKJ")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("y5")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("xpu")]][lIIIllIllllIIl[#("zDNZ")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("Na")];lIIllllIIlIIIllII=IlIIIllIIIlIll[lIIIllIllllIIl[#("rQG")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=lIIllllIIlIIIllII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=lIIllllIIlIIIllII[lIIIllIllllIIl[#{"1 + 1 = 111";{736;334;791;970};{37;72;588;96};{836;188;486;251};}]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("eA")]]=lIIIllIllllIIl[#("KdD")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("YZ")]]={};llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("gj")]][lIIIllIllllIIl[#("rg5")]]=lIIIllIllllIIl[#("njc6")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("tL")]][lIIIllIllllIIl[#("HDZ")]]=lIIIllIllllIIl[#("llZp")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Ex")]][lIIIllIllllIIl[#("zYy")]]=lIIIllIllllIIl[#{"1 + 1 = 111";{24;911;844;632};"1 + 1 = 111";{20;784;132;534};}];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("cE")]][lIIIllIllllIIl[#("XvG")]]=lIIIllIllllIIl[#("P7uQ")];elseif lIIIlIllIIllllIlIl>#("O2O6ME8MYhJ52P3rVD")then IlIIIllIIIlIll[lIIIllIllllIIl[#("UK")]]={};else local llllllIlI=lIIIllIllllIIl[#("tO")]IlIIIllIIIlIll[llllllIlI](lIIllllIIlIIIllII(IlIIIllIIIlIll,llllllIlI+1,lIIIllIllllIIl[#("0L3")]))end;elseif lIIIlIllIIllllIlIl<=#("lGB6pP9qIpZNKtHHXca6")then IlIIIllIIIlIll[lIIIllIllllIIl[#("kW")]]={};elseif lIIIlIllIIllllIlIl>#("oykl2qIpi73kTK1n5yrMm")then do return end;else llllllIlI=lIIIllIllllIIl[#("aWJ")];end;elseif lIIIlIllIIllllIlIl<=#("x9E8MvifoUGs6ipUyyBbzs6C0UQs1OTts")then if lIIIlIllIIllllIlIl<=#("alR3PmgcSiOBNS7k94lkbedbi2P")then if lIIIlIllIIllllIlIl<=#("oLam9jiddFSo4xKXYAg7vQOZ")then if lIIIlIllIIllllIlIl==#("hV6iPVXHrYgiCCEK3hFl7qP")then local IIlIlIIIlIllIlIlllIIIlII;local lIIIlIllIIllllIlIl;lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("ij")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl]()llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("8N")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#{{909;770;556;681};{933;127;791;986};{691;489;947;714};}]][lIIIllIllllIIl[#("Jphh")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("oD")]][lIIIllIllllIIl[#("vnp")]]=lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";{437;909;492;239};}];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("PI")]]=lllIllIll[lIIIllIllllIIl[#("WBf")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("EZ")]]=lllIllIll[lIIIllIllllIIl[#("n5r")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("BM")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("VxS")]][lIIIllIllllIIl[#("koWS")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("ud")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("2DG")]][lIIIllIllllIIl[#("Fclg")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#{{109;661;787;786};"1 + 1 = 111";}]]=lIIIllIllllIIl[#("k83")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("H2")]]=lIIIllIllllIIl[#("joL")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("RU")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("I3n")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("RN")]]=lllIllIll[lIIIllIllllIIl[#("yC1")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#{"1 + 1 = 111";{983;223;395;605};}]]=lllIllIll[lIIIllIllllIIl[#("IHf")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#{{876;224;618;390};"1 + 1 = 111";}]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("qiu")]][lIIIllIllllIIl[#{{927;248;117;326};{167;269;437;526};"1 + 1 = 111";"1 + 1 = 111";}]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("xo")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("s5D")]][lIIIllIllllIIl[#("MkV6")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Ty")]]=lIIIllIllllIIl[#("e9j")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Oq")]]=lIIIllIllllIIl[#("Ejm")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("b2")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("uqQ")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#{"1 + 1 = 111";{725;964;159;621};}]]=lllIllIll[lIIIllIllllIIl[#("0JZ")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("0s")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("RUL")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("ERqC")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("XB")]]=lIIIllIllllIIl[#("GHb")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("CI")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("xjP")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("O7")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#{"1 + 1 = 111";{64;340;648;708};{327;841;136;193};}]][lIIIllIllllIIl[#("7c45")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("ng")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("V7C")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("YReh")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("jC")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1])llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];llllllIlI=lIIIllIllllIIl[#("UMe")];else IlIIIllIIIlIll[lIIIllIllllIIl[#("r7")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("oE0")]]*IlIIIllIIIlIll[lIIIllIllllIIl[#("5aKr")]];end;elseif lIIIlIllIIllllIlIl<=#("pnSVREI7le1ym5yU4RNIDPv8M")then local lIIIllIllllIIl=lIIIllIllllIIl[#("kg")]IlIIIllIIIlIll[lIIIllIllllIIl](IlIIIllIIIlIll[lIIIllIllllIIl+1])elseif lIIIlIllIIllllIlIl==#("CIjNl1fC2CccZXpj6yKgx8UUqp")then local IIlIlIIIlIllIlIlllIIIlII;local lIIIlIllIIllllIlIl;lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("F3")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1])llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("RP")]]=lllIllIll[lIIIllIllllIIl[#("0IG")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("TE")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("sam")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("MWnL")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("tG")]]=lIIIllIllllIIl[#("tji")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("kl")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("8Yo")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("m4")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("EkU")]][lIIIllIllllIIl[#("P1Ni")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("kf")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("KBW")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("tMHu")]];else IlIIIllIIIlIll[lIIIllIllllIIl[#("cB")]]=lllIllIll[lIIIllIllllIIl[#("hrK")]];end;elseif lIIIlIllIIllllIlIl<=#("gaL2Ujtb9XI29rUc6S22ZrtS8yGaEY")then if lIIIlIllIIllllIlIl<=#("v5o9BrJr2GVqvzFKYN5YbzyYYR34")then local lllIIIIIIlIIIIIIlIIIIIlI=lIIIllIllllIIl[#("22")];local llllllIlI=IlIIIllIIIlIll[lIIIllIllllIIl[#{{929;921;379;764};"1 + 1 = 111";{193;359;929;532};}]];IlIIIllIIIlIll[lllIIIIIIlIIIIIIlIIIIIlI+1]=llllllIlI;IlIIIllIIIlIll[lllIIIIIIlIIIIIIlIIIIIlI]=llllllIlI[lIIIllIllllIIl[#("E7ud")]];elseif lIIIlIllIIllllIlIl>#("NsIlzl7VssVxA9vdb7tDYRyI9x7IA")then local lIIIlIllIIllllIlIl;lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("W5")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1])llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("4Q")]]=lllIllIll[lIIIllIllllIIl[#{{535;217;293;419};{634;494;764;667};"1 + 1 = 111";}]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("2s")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("O8T")]][lIIIllIllllIIl[#("DhpS")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("iV")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("Vi5")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("14")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1])llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("h3")]]=lllIllIll[lIIIllIllllIIl[#("Y4J")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("l8")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl]()llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("ve")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("xUU")]][lIIIllIllllIIl[#("x0pP")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#{"1 + 1 = 111";{535;738;519;336};}]][lIIIllIllllIIl[#{{116;415;741;691};"1 + 1 = 111";{455;286;382;381};}]]=lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";}]]=lllIllIll[lIIIllIllllIIl[#("VNK")]];else IlIIIllIIIlIll[lIIIllIllllIIl[#("CY")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";{29;924;218;827};}]][lIIIllIllllIIl[#("SDPf")]];end;elseif lIIIlIllIIllllIlIl<=#("TyP6pnnf7nIYGtjCMzbUXUKBI54albn")then IlIIIllIIIlIll[lIIIllIllllIIl[#("B7")]]=lIIIllIllllIIl[#("eg1")];elseif lIIIlIllIIllllIlIl>#("viKxREUi069f59lezIVIGPx9Yoztsm36")then IlIIIllIIIlIll[lIIIllIllllIIl[#("4z")]]=lIIIllIllllIIl[#("tAQ")];else local lIIIllIllllIIl=lIIIllIllllIIl[#("Dr")]IlIIIllIIIlIll[lIIIllIllllIIl]=IlIIIllIIIlIll[lIIIllIllllIIl](IlIIIllIIIlIll[lIIIllIllllIIl+1])end;elseif lIIIlIllIIllllIlIl<=#("iDxUWUiP241UEGIU0MOpQ2QWKIDeB0NcdgWHZtM")then if lIIIlIllIIllllIlIl<=#("N3OVGouS1KCLpQtpXLjnqdocrYRxTa5H90NW")then if lIIIlIllIIllllIlIl<=#("4pvnUn0ybXxXHUnjyHKOLERH890O5MAcHa")then local IIlIlIIIlIllIlIlllIIIlII;local lIIIlIllIIllllIlIl;lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("ve")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("CgM")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("gAVH")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Xt")]]=lIIIllIllllIIl[#("Gle")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("64")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("TOT")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("KQ")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("Mbs")]][lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";{915;15;729;596};"1 + 1 = 111";}]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("jA")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("cfd")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("7PGP")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("YW")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1])llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("lx")]]=lllIllIll[lIIIllIllllIIl[#{"1 + 1 = 111";{695;527;39;106};"1 + 1 = 111";}]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("fR")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl]()llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("gA")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("p7H")]][lIIIllIllllIIl[#("FGFu")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("5m")]][lIIIllIllllIIl[#("ctM")]]=lIIIllIllllIIl[#("ZL8f")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("TT")]]=lllIllIll[lIIIllIllllIIl[#("enM")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("y9")]]=lllIllIll[lIIIllIllllIIl[#("2p2")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#{{288;646;921;466};"1 + 1 = 111";}]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("Ixr")]][lIIIllIllllIIl[#("Th8H")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("ZK")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("y7u")]][lIIIllIllllIIl[#("asod")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("52")]]=lIIIllIllllIIl[#{{492;694;470;411};{416;215;795;459};"1 + 1 = 111";}];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("2q")]]=lIIIllIllllIIl[#("xOh")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("Rf")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("38l")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("kr")]]=lllIllIll[lIIIllIllllIIl[#("Ovk")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("cq")]]=lllIllIll[lIIIllIllllIIl[#("cW1")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("mR")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("AQs")]][lIIIllIllllIIl[#("cvTN")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("ob")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("mDD")]][lIIIllIllllIIl[#{"1 + 1 = 111";{219;934;449;729};{526;475;611;280};"1 + 1 = 111";}]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("c0")]]=lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("nV")]]=lIIIllIllllIIl[#("NE4")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("03")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("gxJ")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];llllllIlI=lIIIllIllllIIl[#("g2T")];elseif lIIIlIllIIllllIlIl>#("uYaGZyOpbuKmqRxLsdiOBJYoVymDAytpG12")then IlIIIllIIIlIll[lIIIllIllllIIl[#("av")]][lIIIllIllllIIl[#("eu6")]]=lIIIllIllllIIl[#{{652;228;399;420};{40;877;752;595};{417;543;438;29};"1 + 1 = 111";}];else local lIIIlIllIIllllIlIl;IlIIIllIIIlIll[lIIIllIllllIIl[#("rj")]]=lllIllIll[lIIIllIllllIIl[#("l2T")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Yo")]]=lllIllIll[lIIIllIllllIIl[#("f6N")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Ao")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("xBc")]][lIIIllIllllIIl[#("m7uf")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("2J")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1])llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];do return end;end;elseif lIIIlIllIIllllIlIl<=#("yaUq7nQmyWK7Iag9zxBWaVVClk0OatRzYbnss")then local lIIIlIllIIllllIlIl;lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("Vv")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1])llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("OT")]]=lllIllIll[lIIIllIllllIIl[#("lgt")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("WL")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("S35")]][lIIIllIllllIIl[#("FCQU")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("03")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("CYs")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";}]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1])llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("g1")]]=lllIllIll[lIIIllIllllIIl[#("nBs")]];elseif lIIIlIllIIllllIlIl==#("Qm2M18Xo4zqt1iBguMpseWyclefkiHWXRHRo3y")then llllllIlI=lIIIllIllllIIl[#("6yS")];else local IIlIlIIIlIllIlIlllIIIlII;local lIIIlIllIIllllIlIl;IlIIIllIIIlIll[lIIIllIllllIIl[#("kk")]]=lllIllIll[lIIIllIllllIIl[#("HqZ")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("iU")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("SOm")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("elmJ")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Iy")]]=lIIIllIllllIIl[#("1W9")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("VZ")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("tPn")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Kk")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("Iql")]][lIIIllIllllIIl[#("PBDj")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("HC")]]=lllIllIll[lIIIllIllllIIl[#("zWV")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("Rm")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl]()llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("Yn")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("Kcy")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("iW2q")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("oC")]]=lIIIllIllllIIl[#("Oel")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("XN")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("Sky")]))end;elseif lIIIlIllIIllllIlIl<=#("WO6pBxQDJ8SQMdaX4Z0AX3NgyMDNuClm6RDPhG6QFM")then if lIIIlIllIIllllIlIl<=#("mB0kURTWAd8h3b02Z3chhWFT4KvPy2k4lvAQHBT6")then local lllIIIIIIlIIIIIIlIIIIIlI=lIIIllIllllIIl[#("Ns")];local llllllIlI=IlIIIllIIIlIll[lIIIllIllllIIl[#("qWU")]];IlIIIllIIIlIll[lllIIIIIIlIIIIIIlIIIIIlI+1]=llllllIlI;IlIIIllIIIlIll[lllIIIIIIlIIIIIIlIIIIIlI]=llllllIlI[lIIIllIllllIIl[#("SZPa")]];elseif lIIIlIllIIllllIlIl==#("PWj8KKNqOhWCEAA5hqkudyH2d6HLkuykgGC9vUtaS")then local llllllIlI=lIIIllIllllIIl[#("4R")]IlIIIllIIIlIll[llllllIlI](lIIllllIIlIIIllII(IlIIIllIIIlIll,llllllIlI+1,lIIIllIllllIIl[#{{232;142;305;899};"1 + 1 = 111";"1 + 1 = 111";}]))else local IIlIlIIIlIllIlIlllIIIlII;local lIIIlIllIIllllIlIl;lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("EN")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl]()llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Mf")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("YMv")]][lIIIllIllllIIl[#("Qstn")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("la")]][lIIIllIllllIIl[#("ns9")]]=lIIIllIllllIIl[#("c7i3")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Wq")]]=lllIllIll[lIIIllIllllIIl[#("mID")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("VO")]]=lllIllIll[lIIIllIllllIIl[#("GC6")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("fz")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("pHc")]][lIIIllIllllIIl[#{"1 + 1 = 111";{542;82;961;528};{239;435;247;880};"1 + 1 = 111";}]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("bv")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("La7")]][lIIIllIllllIIl[#("a3n7")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("l4")]]=lIIIllIllllIIl[#("rsT")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("0V")]]=lllIllIll[lIIIllIllllIIl[#("HhD")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("1h")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("EfJ")]][lIIIllIllllIIl[#("GLPW")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("zP")]]=lllIllIll[lIIIllIllllIIl[#("RZB")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("2c")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("fFW")]][lIIIllIllllIIl[#("Afds")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Xf")]]=lllIllIll[lIIIllIllllIIl[#("RNA")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#{{784;189;978;418};"1 + 1 = 111";}]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("0eY")]][lIIIllIllllIIl[#("QWQ4")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("8C")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("lGe")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Ib")]]=lllIllIll[lIIIllIllllIIl[#("Olq")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("yI")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("Joi")]][lIIIllIllllIIl[#("W29Z")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("T3")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#{{480;998;700;884};"1 + 1 = 111";"1 + 1 = 111";}]]*IlIIIllIIIlIll[lIIIllIllllIIl[#("RrKi")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("Dr")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("287")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("tW")]]=lllIllIll[lIIIllIllllIIl[#("gRR")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Kt")]]=lllIllIll[lIIIllIllllIIl[#{"1 + 1 = 111";{386;192;367;393};"1 + 1 = 111";}]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("px")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("345")]][lIIIllIllllIIl[#("CWKq")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("p2")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("ts8")]][lIIIllIllllIIl[#("YMSK")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("ys")]]=lIIIllIllllIIl[#("bWt")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Il")]]=lllIllIll[lIIIllIllllIIl[#("JGW")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Tn")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("xSg")]][lIIIllIllllIIl[#("fNHc")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("gr")]]=lllIllIll[lIIIllIllllIIl[#("x96")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("VE")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("gyd")]][lIIIllIllllIIl[#("630A")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("MQ")]]=lllIllIll[lIIIllIllllIIl[#("Y8J")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("hA")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("UNb")]][lIIIllIllllIIl[#("ZafN")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("fE")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("tRU")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Vq")]]=lllIllIll[lIIIllIllllIIl[#("trz")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("tS")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";{640;653;523;965};}]][lIIIllIllllIIl[#("i4yP")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";}]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("41T")]]*IlIIIllIIIlIll[lIIIllIllllIIl[#("obHG")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("z9")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("Qcq")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Kk")]]=lllIllIll[lIIIllIllllIIl[#("7dv")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("NT")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("pDj")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("NGXG")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";}]]=lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";{601;545;844;808};}];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("MY")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("FhH")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("tN")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("7ue")]][lIIIllIllllIIl[#("degK")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("Yi")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#{"1 + 1 = 111";{259;336;337;729};"1 + 1 = 111";}]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("iu7H")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("0s")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1])llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];llllllIlI=lIIIllIllllIIl[#("GEL")];end;elseif lIIIlIllIIllllIlIl<=#("UUyCR69UAkJLIqpq5OcbgsUMv77BJx6jNPOXELoLLA5")then local lIIIlIllIIllllIlIl;lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("aX")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1])llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("zz")]]=lllIllIll[lIIIllIllllIIl[#("pdl")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("xH")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("xiR")]][lIIIllIllllIIl[#("XBjX")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Jx")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("vYG")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("uc")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1])llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("fE")]]=lllIllIll[lIIIllIllllIIl[#("hv3")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("QY")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("R6f")]][lIIIllIllllIIl[#("CR7d")]];elseif lIIIlIllIIllllIlIl>#("LF8lUfZQ8QrCaWfU8Jlcnz83NCWtzBBQxHa19WQEHql7")then local IIlIlIIIlIllIlIlllIIIlII;local lIIIlIllIIllllIlIl;lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("Yi")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("tdI")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("4oc1")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("E9")]]=lIIIllIllllIIl[#("8lr")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#{"1 + 1 = 111";{362;513;430;322};}]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("1RB")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("QI")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("2mX")]][lIIIllIllllIIl[#{{781;414;67;520};{246;318;281;616};{520;425;780;551};"1 + 1 = 111";}]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("BJ")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("qeJ")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("BguW")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("Wo")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl](IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1])llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("J4")]]=lllIllIll[lIIIllIllllIIl[#("Brt")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("Fc")];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("Yn7")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("V4Gc")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("u9")]]=lIIIllIllllIIl[#("797")];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("lT")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("zYN")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Wj")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("FZS")]][lIIIllIllllIIl[#{{582;37;355;294};{926;117;97;443};{925;437;870;592};"1 + 1 = 111";}]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Im")]]=lllIllIll[lIIIllIllllIIl[#("0Ly")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("E4")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("xV8")]][lIIIllIllllIIl[#("X2Ue")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("B9")]]=lllIllIll[lIIIllIllllIIl[#("JU5")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("03")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("xTv")]][lIIIllIllllIIl[#("6IT2")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Y3")]]=lllIllIll[lIIIllIllllIIl[#{{91;469;208;93};"1 + 1 = 111";"1 + 1 = 111";}]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("is")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("ndj")]][lIIIllIllllIIl[#("ZbpE")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("vh")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("U1x")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Lt")]][lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("csO1")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#{{635;168;434;830};"1 + 1 = 111";}]]=lllIllIll[lIIIllIllllIIl[#("vyF")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";}];IIlIlIIIlIllIlIlllIIIlII=IlIIIllIIIlIll[lIIIllIllllIIl[#("3PW")]];IlIIIllIIIlIll[lIIIlIllIIllllIlIl+1]=IIlIlIIIlIllIlIlllIIIlII;IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IIlIlIIIlIllIlIlllIIIlII[lIIIllIllllIIl[#("QgxG")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#{"1 + 1 = 111";{46;940;909;588};}]]=lIIIllIllllIIl[#{"1 + 1 = 111";{424;615;244;136};{424;224;374;59};}];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];lIIIlIllIIllllIlIl=lIIIllIllllIIl[#("l3")]IlIIIllIIIlIll[lIIIlIllIIllllIlIl]=IlIIIllIIIlIll[lIIIlIllIIllllIlIl](lIIllllIIlIIIllII(IlIIIllIIIlIll,lIIIlIllIIllllIlIl+1,lIIIllIllllIIl[#("dum")]))llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("Rr")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("CLC")]][lIIIllIllllIIl[#("Il48")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("4h")]]=lllIllIll[lIIIllIllllIIl[#{"1 + 1 = 111";{16;724;303;376};{167;614;190;580};}]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("5O")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("BH4")]][lIIIllIllllIIl[#("6xT5")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("OG")]]=lllIllIll[lIIIllIllllIIl[#("z4v")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#{"1 + 1 = 111";{16;979;745;211};}]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("fFq")]][lIIIllIllllIIl[#("lx6b")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#("AA")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("nGj")]]*IlIIIllIIIlIll[lIIIllIllllIIl[#("2yCc")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];IlIIIllIIIlIll[lIIIllIllllIIl[#{"1 + 1 = 111";{425;807;837;296};}]][lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}]]=IlIIIllIIIlIll[lIIIllIllllIIl[#("TPbG")]];llllllIlI=llllllIlI+1;lIIIllIllllIIl=lllIIIIIIlIIIIIIlIIIIIlI[llllllIlI];llllllIlI=lIIIllIllllIIl[#("y6X")];else IlIIIllIIIlIll[lIIIllIllllIIl[#("JF")]][lIIIllIllllIIl[#("PRM")]]=IlIIIllIIIlIll[lIIIllIllllIIl[#{"1 + 1 = 111";"1 + 1 = 111";{844;405;652;67};"1 + 1 = 111";}]];end;llllllIlI=llllllIlI+1;end;end;A,B=IlIlllIlllIIlIIlIlIIllI(IllIllIIlllIIllllllI(IllllIlIIIllIIIIIIIl))if not A[1]then local lIIIllIllllIIl=IllIIIIIlIllIIlllIllIIl[4][llllllIlI]or'?';error('ERROR [LINE '..lIIIllIllllIIl..']:'..A[2]);wait(9e9);else return lIIllllIIlIIIllII(A,2,B);end;end);end;return lIlIIIlI(true,{},IllllIlIIIllIIIIIIIl())();end)(string.byte,table.insert,setmetatable);
+
+end)
+end))
